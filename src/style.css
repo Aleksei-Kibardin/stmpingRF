@@ -1,12 +1,18 @@
+:root{
+--gutter: 20px
+}
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
+  font-family: Roboto;
 }
 a{
   text-decoration: none;
 }
 html {
+  box-sizing: border-box;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -14,13 +20,13 @@ html {
 body, h1, h2, h3, h4, p,
 figure, blockquote, dl, dd {
   margin: 0;
+  padding: 0;
 }
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
 body {
-  overflow: hidden;
   min-height: 100vh;
   line-height: 1.5;
 }
@@ -53,4 +59,32 @@ textarea:not([rows]) {
 }
 h1{
   font-family: 'Roboto';
+}
+.container{
+  height: 100%;
+max-width: 1400px;
+margin: auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.row > div{
+  padding: 20px;
+  
+}
+.col-2{
+  width: calc(16.66% - var(--gutter));
+}
+.col-3{
+  width: calc(25% - var(--gutter));
+}
+.col-4{
+  width: calc(33.33% - var(--gutter));
+}
+.col-6{
+  width: calc(50% - var(--gutter));
+}
+.col-12{
+  width: calc(100% - var(--gutter));
 }
