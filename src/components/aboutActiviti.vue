@@ -13,10 +13,22 @@
     </div>
     <div class="row">
       <div class="cards">
-        <div class="card col-3"></div>
-        <div class="card col-3"></div>
-        <div class="card col-3"></div>
-        <div class="card col-3"></div>
+        <div class="card col-3">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="card col-3">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="card col-3">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="card col-3">
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
     <div class="row">
