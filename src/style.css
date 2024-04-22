@@ -62,16 +62,11 @@ h1{
 }
 .container{
   height: 100%;
-max-width: 1400px;
-margin: auto;
+  margin: auto;
 }
 .row{
   display: flex;
   flex-wrap: wrap;
-}
-.row > div{
-  padding: 20px;
-  
 }
 .col-2{
   width: calc(16.66% - var(--gutter));
