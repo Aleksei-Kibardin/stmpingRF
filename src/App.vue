@@ -41,6 +41,15 @@ import footerVue from "./components/footer.vue";
 .container{
     @include fluid("max-width", 1400);
 }
+body::-webkit-scrollbar {
+    width: 10px
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #467cf3;
+    border-radius: 20px;
+    border: 1px solid rgb(255, 255, 255)
+}
 .row > div{
   @include fluid("padding", 20);
 }
