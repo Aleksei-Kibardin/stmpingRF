@@ -6,10 +6,10 @@
       :space-around="50"
       :watchSlidesProgress="true"
       navigation
-      :pagination="{ type: 'progressbar', }"
+      :pagination="{ dynamicBullets: true, }"
       :loop="true"
     >
-      <swiper-slide class="swiper__img" v-for="index in 22" :key="index"
+      <swiper-slide class="swiper__img" v-for="index in 14" :key="index"
         ><img class="img" :src="`/img/${index}.jpeg`" alt="" loading="lazy"
       /></swiper-slide>
     </swiper>

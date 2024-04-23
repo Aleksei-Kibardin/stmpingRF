@@ -14,7 +14,7 @@
         <div class="ancor">Контакты</div>
       </div>
       <div class="nav-contact--btn col-4">
-        <span>+7-901-971-46-64</span>
+        <span> +7-901-971-46-64</span>
         <span>ЗАКАЗАТЬ ЗВОНОК</span>
       </div>
     </div>
@@ -28,7 +28,7 @@
   <footerVue></footerVue>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import aboutActiviti from "./components/aboutActiviti.vue";
 import galleryVue from "./components/gallery.vue";
 import headerVue from "./components/header.vue";

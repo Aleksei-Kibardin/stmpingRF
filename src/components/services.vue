@@ -100,5 +100,11 @@ export default {};
   @include fluid("border-radius", 16);
   @include fluid("height", 290);
   border: 1px solid #c8c8c8;
+  h1{
+    @include fluid("font-size", 25);
+  }
+  p{
+    @include fluid("font-size", 18);
+  }
 }
 </style>
