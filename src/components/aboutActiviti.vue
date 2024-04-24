@@ -76,6 +76,31 @@ const cards = [
     txt: "",
     color: 1,
   },
+  {
+    title: "",
+    txt: "",
+    color: 1,
+  },
+  {
+    title: "",
+    txt: "",
+    color: 1,
+  },
+  {
+    title: "",
+    txt: "",
+    color: 1,
+  },
+  {
+    title: "",
+    txt: "",
+    color: 1,
+  },
+  {
+    title: "",
+    txt: "",
+    color: 1,
+  },
 ];
 </script>
 
