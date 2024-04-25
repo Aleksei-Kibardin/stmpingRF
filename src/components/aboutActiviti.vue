@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="section2" class="container">
     <div class="row">
       <div class="title--activiti col-12">
         <h1>Направление деятельности</h1>
@@ -10,105 +10,99 @@
         </p>
       </div>
     </div>
-    <div class="row">
-      <div class="cards">
-        <div class="card col-3">
-          <div class="wrap-circl--card">
-            <div class="circl--card">1</div>
-          </div>
-          <div class="card--title">Title</div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-            tempor.
-          </div>
-        </div>
-        <div class="card col-3">
-          <div class="wrap-circl--card">
-            <div class="circl--card">2</div>
-          </div>
-          <div class="card--title">Title</div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-            tempor.
+    <div class="row cards">
+      <div
+        class="card col-3"
+        v-for="(t, i) in cards"
+        :key="(t, i)"
+        :style="{ background: t.color }"
+        @click="currentCard = t"
+      >
+        <div class="wrap-circl--card">
+          <div class="circl--card" :style="{ background: t.color }">
+            {{ i + 1 }}
           </div>
         </div>
-        <div class="card col-3">
-          <div class="wrap-circl--card">
-            <div class="circl--card">3</div>
-          </div>
-          <div class="card--title">Title</div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-            tempor.
-          </div>
-        </div>
-        <div class="card col-3">
-          <div class="wrap-circl--card">
-            <div class="circl--card">4</div>
-          </div>
-          <div class="card--title">Title</div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-            tempor.
-          </div>
+        <div class="card--title">{{ t.title }}</div>
+        <div>
+          {{ t.txt }}
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="desc--activiti col-12">
-        <h1>Engagement models</h1>
+      <div
+        class="desc--activiti col-12"
+        :style="{ background: currentCard.color }"
+      >
+        <h1>{{ currentCard.title }}</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
-          Amet suspendisse praesent ipsum enim adipiscing
+          {{ currentCard.txt }}
         </p>
       </div>
     </div>
   </div>
   <div class="activiti--footer">
-
+    <div class="container activiti--footer--items">
+      <div class="foo">
+        <img src="../assets/industry 1@2x.png" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
+          tempor.
+        </p>
+      </div>
+      <div class="foo">
+        <img src="../assets/like (3) 1@2x.png" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
+          tempor.
+        </p>
+      </div>
+      <div class="foo">
+        <img src="../assets/stopwatch 1@2x.png" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
+          tempor.
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup >
+<script setup>
+import { ref } from "vue";
+
+const currentCard = ref({
+  title: "Title",
+  txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+  color: "#1379fe5e",
+});
+
 const cards = [
   {
-    title: "",
-    txt: "",
-    color: 1,
+    title: "Title",
+    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    color: "#1379fe5e",
   },
   {
-    title: "",
-    txt: "",
-    color: 1,
+    title: "Title",
+    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    color: "#feee135e",
   },
   {
-    title: "",
-    txt: "",
-    color: 1,
+    title: "Title",
+    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    color: "#fe4a135e",
   },
   {
-    title: "",
-    txt: "",
-    color: 1,
-  },
-  {
-    title: "",
-    txt: "",
-    color: 1,
-  },
-  {
-    title: "",
-    txt: "",
-    color: 1,
+    title: "Title",
+    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    color: "#56fe135e",
   },
 ];
 </script>
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.container {
-  @include fluid("max-height", 991);
-}
 .title--activiti {
   display: flex;
   justify-content: center;
@@ -122,7 +116,7 @@ const cards = [
 .cards {
   width: 100%;
   display: flex;
-  @include fluid("gap", 65);
+  height: 100%;
   @include fluid("margin-top", 100);
   justify-content: space-between;
 }
@@ -137,7 +131,18 @@ const cards = [
   @include fluid("gap", 20);
   @include fluid("height", 275);
   border-radius: 10px;
-  background-color: #1379fe5e;
+  cursor: pointer;
+}
+.card:hover {
+  .wrap-circl--card {
+    @include fluid("top", -80);
+  }
+  .wrap-circl--card::after {
+    @include fluid("height", 20);
+  }
+  .wrap-circl--card::before {
+    @include fluid("top", 70);
+  }
 }
 .card--title {
   @include fluid("font-size", 24);
@@ -156,22 +161,24 @@ const cards = [
 }
 .wrap-circl--card {
   position: absolute;
-  border: 1px #000 solid;
+  border: 1px #00000021 solid;
   @include fluid("height", 75);
   @include fluid("width", 75);
   @include fluid("top", -100);
-  left: 35%;
   padding: 2px;
+  align-self: center;
   border-radius: 50%;
+  transition: 0.5s all ease;
 }
 .wrap-circl--card::after {
   content: "";
   position: absolute;
   display: block;
   @include fluid("height", 40);
-  left: 50%;
+  @include fluid("left", 36);
   width: 0;
   border: #000 1px solid;
+  transition: 0.5s all ease;
 }
 .wrap-circl--card::before {
   content: "";
@@ -189,6 +196,7 @@ const cards = [
   @include fluid("border-bottom-width", 2);
   @include fluid("border-right-width", 2);
   transform: rotate(45deg);
+  transition: 0.5s all ease;
 }
 .desc--activiti {
   background-color: #1379fe31;
@@ -201,11 +209,12 @@ const cards = [
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: 0.5s all ease;
   h1 {
     @include fluid("font-size", 30);
   }
 }
-.activiti--footer{
+.activiti--footer {
   width: 100%;
   @include fluid("margin-top", 100);
   @include fluid("height", 200);
@@ -213,5 +222,31 @@ const cards = [
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.activiti--footer--items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.foo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  @include fluid("font-size", 16);
+  img {
+    @include fluid("height", 60);
+  }
+  p {
+    text-shadow: 1px 1px #000000;
+  }
+}
+@media (max-width: 991px) {
+  .card {
+    margin-bottom: 50px;
+  }
+  .activiti--footer {
+    width: 100%;
+  }
 }
 </style>

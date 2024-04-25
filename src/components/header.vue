@@ -1,5 +1,5 @@
 <template>
-  <div class="head--container">
+  <div id="section1" class="head--container">
     <div class="bg"></div>
     <header class="container">
       <div class="row">
@@ -58,5 +58,15 @@
   z-index: 2;
   display: flex;
   align-items: center;
+}
+@media (max-width: 991px) {
+  .content-header {
+  h1{
+    @include fluid("font-size", 70);
+  }
+  p {
+    @include fluid("font-size", 26);
+  }
+}
 }
 </style>

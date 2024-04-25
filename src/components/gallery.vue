@@ -1,5 +1,5 @@
 <template>
-  <div class="slider">
+  <div class="slider" id="section3">
     <swiper
       :modules="modules"
       :slides-per-view="3"
@@ -33,5 +33,9 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 .slider{
   @include fluid("margin-top", 100);
   user-select: none;
+}
+.swiper__img{
+  display: flex;
+  align-self: center;
 }
 </style>

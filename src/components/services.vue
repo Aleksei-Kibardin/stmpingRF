@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="section4" class="container">
     <div class="title--services col-12">
       <h1>Услуги</h1>
       <p>
@@ -8,63 +8,63 @@
       </p>
     </div>
     <div class="row services--items">
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
           Amet suspendisse praesent ipsum enim adipiscing
         </p>
       </div>
-      <div class="services--item col-4">
+      <div class="services--item col-3">
         <h1>Заголовок</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
@@ -88,6 +88,7 @@ export default {};
   }
 }
 .services--items{
+  justify-content: center;
   @include fluid("gap", 20);
   @include fluid("margin-top", 100);
   @include fluid("margin-bottom", 100);

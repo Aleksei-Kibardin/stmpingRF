@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div id="section5" class="row">
     <div class="container">
       <h1>Контакты компании</h1>
       <div class="contacts">
@@ -71,7 +71,7 @@ export default {};
 footer {
   background: #323232;
   @include fluid("font-size", 18);
-  height: 100%;
+  @include fluid("height", 200);
   .footer {
     color: #b8b8b8;
     display: flex;
@@ -114,6 +114,9 @@ footer {
   background: #007fa7;
   border-radius: 6px 0 0 6px;
   width: 100%;
+  cursor: pointer;
+  @include fluid("min-width", 220);
+  @include fluid("font-size", 25);
   @include fluid("height", 48);
 }
 .btn--item {
@@ -123,6 +126,11 @@ footer {
   align-self: flex-end;
   height: 100%;
   @include fluid("width", 57);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.btn--item:hover {
+  background: #007fa7;
 }
 .btn--item::before {
   content: "";
