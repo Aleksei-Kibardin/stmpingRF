@@ -1,4 +1,5 @@
 <template>
+    <modal-form :modalActive="modalActive"></modal-form>
   <div id="section5" class="row">
     <div class="container">
       <h1>Контакты компании</h1>
@@ -6,15 +7,15 @@
         <div class="contacts-items col-6">
           <h3>Контактные данные</h3>
           <div class="phone contacts--item">
-            <span>Телефон:</span> +7800553535
+            <span>Телефон:</span> +7-901-971-46-64
           </div>
           <div class="address contacts--item">
-            <span>Адресс:</span> г. Санкт-Петербург ул. **************
+            <span>Адресс:</span> г. Санкт-Петербург, Лиговский проспект, 52 К
           </div>
           <div class="email contacts--item">
-            <span>Email</span> ******@mail.com
+            <span>Email:</span> spb9714664@yandex.ru
           </div>
-          <div class="btn--wrap">
+          <div class="btn--wrap" @click="modalActive = !modalActive">
             <div class="btn">
               <span>Оставить заявку</span>
             </div>
@@ -40,27 +41,39 @@
           />
         </div>
         <div class="nav-ancors">
-          <div class="nav-ancor">Главная</div>
-          <div class="nav-ancor">Деятельность</div>
-          <div class="nav-ancor">Наша продукция</div>
-          <div class="nav-ancor">Услуги</div>
-          <div class="nav-ancor">Контакты</div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section1')">Главная</div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section2')">Деятельность</div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section3')">Наша продукция</div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section4')">Услуги</div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section5')">Контакты</div>
         </div>
-        <div class="phone contacts--item">+7800553535</div>
+        <div class="phone contacts--item">+7-901-971-46-64</div>
       </div>
       <div class="footer-row">
-        <span>© Все права защищены. 2022</span>
+        <span>© Все права защищены. 2024</span>
         <div class="address contacts--item">
-          г. Санкт-Петербург ул. **************
+          г. Санкт-Петербург, Лиговский проспект, 52 К
         </div>
-        <div class="email contacts--item">******@mail.com</div>
+        <div class="email contacts--item">spb9714664@yandex.ru</div>
       </div>
     </div>
   </footer>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
+import modalForm from "../components/modalForm.vue";
+
+const modalActive = ref(false);
+
+const scrollToAnchor = (anchor) => {
+  const element = document.querySelector(anchor);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -162,6 +175,7 @@ footer {
 .nav-ancors {
   display: flex;
   @include fluid("gap", 20);
+  cursor: pointer;
 }
 .logo {
   @include fluid("width", 200);

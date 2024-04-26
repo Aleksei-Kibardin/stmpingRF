@@ -18,18 +18,31 @@
           <input v-model="formData.name" type="text" name="name" required />
         </div>
         <div>
-          <label>Почта <span>*</span></label>
-          <input v-model="formData.email" type="text" name="email" required />
+          <label>Почта <span></span></label>
+          <input v-model="formData.email" type="email" name="email" />
         </div>
         <div>
           <label>Номер телефона (с кодом) <span>*</span></label>
-          <input v-mask="'(###) ###-####'" v-model="formData.number" type="text" name="number" required />
+          <input v-model="formData.number" type="text" name="number" required />
         </div>
         <div>
           <label>Сообщение</label>
-          <input v-model="formData.question" type="text" name="question" />
+          <input
+            id="tel"
+            v-model="formData.question"
+            type="text"
+            name="question"
+          />
         </div>
-        <button class="bot-send-mail" type="submit">Послать заявку</button>
+        <button
+          @click="post()"
+          :disabled="valid"
+          :class="{ 'submit-anim': valid !== true }"
+          class="bot-send-mail"
+          type="submit"
+        >
+          Послать заявку
+        </button>
       </div>
     </form>
     <div v-else>
@@ -39,27 +52,31 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch  } from "vue";
+import { ref, reactive, watch } from "vue";
 import { submitForm } from "../services/form";
 
 const props = defineProps({
-  modalActive: Boolean
-})
-
-const active = ref(props.modalActive);
-
-watch(() => props.modalActive, (newValue, oldValue) => {
-  active.value = true
+  modalActive: Boolean,
 });
 
+const active = ref(props.modalActive);
+const valid = ref(true);
 const formSubmitted = ref(false);
 const message = ref("");
 const formData = reactive({
   name: "",
   number: "",
   email: "",
+  question: "",
 });
 
+watch(() => props.modalActive, () => {
+    active.value = true;
+});
+
+watch(formData, () => {
+  formData.number = formData.number.replace(/[^\d+()]/g, "");
+});
 const closeModal = (event) => {
   event.stopPropagation();
   document.body.classList.remove("modal-open");
@@ -144,10 +161,11 @@ const post = async () => {
   text-transform: uppercase;
   font-weight: 700;
   background-color: #0080a7;
+  color: #fff;
   cursor: pointer;
   transition: 0.4s all ease;
 }
-.form-zvonok .bot-send-mail:hover {
+.submit-anim:hover {
   color: #009b97;
   background-color: #fff;
 }
@@ -174,5 +192,11 @@ const post = async () => {
     padding: 10px;
     margin-top: 10px;
   }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 </style>
