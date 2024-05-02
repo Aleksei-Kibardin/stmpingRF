@@ -217,6 +217,21 @@ footer {
     @include fluid("top", 38);
     @include fluid("left", 40);
   }
+  .footer {
+    flex-direction: row !important;
+  }
+  .footer-row{
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .nav-ancors{
+    flex-direction: column;
+  }
+  footer {
+    width: 100%;
+    height: 300px;
+    @include fluid("font-size", 35);
+  }
 }
 @media (min-width: 200px) and (max-width: 300px) {
   .nav-ancors {
