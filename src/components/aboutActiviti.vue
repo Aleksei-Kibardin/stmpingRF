@@ -247,12 +247,43 @@ const cards = [
 @media (max-width: 991px) {
   .title--activiti {
     flex-direction: column;
+    @include fluid("gap", 20);
+    h1{
+      @include fluid("font-size", 39);
+    }
+    p{
+      @include fluid("font-size", 26);
+    }
   }
   .card {
     margin-bottom: 50px;
+    @include fluid("font-size", 26);
+    .card--title{
+      @include fluid("font-size", 36);
+    }
+  }
+  .desc--activiti{
+    h1{
+      @include fluid("font-size", 39);
+    }
+    p{
+      @include fluid("font-size", 26);
+    }
   }
   .activiti--footer {
+    height: 100%;
     width: 100%;
+    .activiti--footer--items{
+      flex-direction: column;
+      @include fluid("gap", 50);
+      img{
+        width: 18%;
+        height: 18%;
+      }
+      p{
+        @include fluid("font-size", 26);
+      }
+    }
   }
 }
 </style>

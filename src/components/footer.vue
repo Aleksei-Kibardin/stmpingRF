@@ -194,5 +194,8 @@ footer {
   .contacts {
     flex-direction: column;
   }
+  .nav-ancors{
+    display: none;
+  }
 }
 </style>

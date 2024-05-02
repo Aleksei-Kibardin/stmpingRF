@@ -108,4 +108,21 @@ export default {};
     @include fluid("font-size", 18);
   }
 }
+@media (max-width: 991px) {
+  .services--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  @include fluid("border-radius", 16);
+  @include fluid("height", 290);
+  border: 1px solid #c8c8c8;
+  h1{
+    @include fluid("font-size", 33);
+  }
+  p{
+    @include fluid("font-size", 26);
+  }
+}
+}
 </style>
