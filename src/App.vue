@@ -15,8 +15,12 @@
       </div>
       <div class="nav--ancors col-6" :class="{ active: isActive }">
         <div class="ancor" @click="scrollToAnchor('#section1')">Главная</div>
-        <div class="ancor" @click="scrollToAnchor('#section2')">Деятельность</div>
-        <div class="ancor" @click="scrollToAnchor('#section3')">Наша продукция</div>
+        <div class="ancor" @click="scrollToAnchor('#section2')">
+          Деятельность
+        </div>
+        <div class="ancor" @click="scrollToAnchor('#section3')">
+          Наша продукция
+        </div>
         <div class="ancor" @click="scrollToAnchor('#section4')">Услуги</div>
         <div class="ancor" @click="scrollToAnchor('#section5')">Контакты</div>
       </div>
@@ -94,7 +98,7 @@ nav {
     cursor: pointer;
   }
 }
-.anchor{
+.anchor {
   z-index: 10;
   cursor: pointer;
 }

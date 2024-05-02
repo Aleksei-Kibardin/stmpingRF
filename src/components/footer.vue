@@ -1,5 +1,5 @@
 <template>
-    <modal-form :modalActive="modalActive"></modal-form>
+  <modal-form :modalActive="modalActive"></modal-form>
   <div id="section5" class="row">
     <div class="container">
       <h1>Контакты компании</h1>
@@ -41,11 +41,21 @@
           />
         </div>
         <div class="nav-ancors">
-          <div class="nav-ancor" @click="scrollToAnchor('#section1')">Главная</div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section2')">Деятельность</div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section3')">Наша продукция</div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section4')">Услуги</div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section5')">Контакты</div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section1')">
+            Главная
+          </div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section2')">
+            Деятельность
+          </div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section3')">
+            Наша продукция
+          </div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section4')">
+            Услуги
+          </div>
+          <div class="nav-ancor" @click="scrollToAnchor('#section5')">
+            Контакты
+          </div>
         </div>
         <div class="phone contacts--item">+7-901-971-46-64</div>
       </div>
@@ -179,5 +189,10 @@ footer {
 }
 .logo {
   @include fluid("width", 200);
+}
+@media (min-width: 200px) and (max-width: 500px) {
+  .contacts {
+    flex-direction: column;
+  }
 }
 </style>
