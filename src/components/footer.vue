@@ -194,6 +194,8 @@ footer {
   .contacts {
     flex-direction: column;
   }
+}
+@media (min-width: 200px) and (max-width: 300px) {
   .nav-ancors{
     display: none;
   }
