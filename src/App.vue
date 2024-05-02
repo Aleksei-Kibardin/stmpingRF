@@ -175,6 +175,9 @@ nav {
   .menu-btn {
     display: flex;
   }
+  .nav-contact--btn{
+    width: 42%;
+  }
   .nav--ancors {
     background: #e8f0ff;
     position: absolute;

@@ -161,7 +161,7 @@ const cards = [
 }
 .wrap-circl--card {
   position: absolute;
-  border: 1px #00000021 solid;
+  border: 1px #00000059 solid;
   @include fluid("height", 75);
   @include fluid("width", 75);
   @include fluid("top", -100);
@@ -169,6 +169,9 @@ const cards = [
   align-self: center;
   border-radius: 50%;
   transition: 0.5s all ease;
+}
+.wrap-circl--card:hover {
+  border: 1px #00000000 solid;
 }
 .wrap-circl--card::after {
   content: "";
@@ -242,7 +245,7 @@ const cards = [
   }
 }
 @media (max-width: 991px) {
-  .title--activiti{
+  .title--activiti {
     flex-direction: column;
   }
   .card {
