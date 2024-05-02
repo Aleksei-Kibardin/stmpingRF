@@ -194,9 +194,32 @@ footer {
   .contacts {
     flex-direction: column;
   }
+  .btn {
+    @include fluid("height", 100);
+    @include fluid("width", 500);
+    @include fluid("font-size", 55);
+  }
+  .btn--item {
+    @include fluid("height", 100);
+    @include fluid("width", 100);
+  }
+  .btn--item::before {
+    @include fluid("border-width", 1);
+    @include fluid("width", 50);
+    @include fluid("top", 50);
+    @include fluid("left", 20);
+  }
+  .btn--item::after {
+    @include fluid("border-bottom-width", 5);
+    @include fluid("border-right-width", 5);
+    @include fluid("width", 30);
+    @include fluid("height", 30);
+    @include fluid("top", 38);
+    @include fluid("left", 40);
+  }
 }
 @media (min-width: 200px) and (max-width: 300px) {
-  .nav-ancors{
+  .nav-ancors {
     display: none;
   }
 }

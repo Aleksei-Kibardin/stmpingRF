@@ -83,7 +83,7 @@ body::-webkit-scrollbar-thumb {
   @include fluid("padding", 20);
 }
 nav {
-  @include fluid("height", 70);
+  @include fluid("height", 100);
   @include fluid("font-size", 20);
   position: fixed;
   background-color: #e8f0ff;

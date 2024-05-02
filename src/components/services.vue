@@ -83,6 +83,7 @@ export default {};
 @import "../fluid.sass";
 .title--services {
   text-align: center;
+  @include fluid("margin-top", 100);
   p {
     @include fluid("margin-top", 40);
   }
@@ -109,19 +110,25 @@ export default {};
   }
 }
 @media (max-width: 991px) {
+  .services--items{
+  justify-content: center;
+  @include fluid("gap", 80);
+}
   .services--item {
+    box-shadow: 0px 3px 4px 1px #8f8f8f5b;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   @include fluid("border-radius", 16);
   @include fluid("height", 290);
+  width: 90%;
   border: 1px solid #c8c8c8;
   h1{
-    @include fluid("font-size", 33);
+    @include fluid("font-size", 36);
   }
   p{
-    @include fluid("font-size", 26);
+    @include fluid("font-size", 33);
   }
 }
 }

@@ -6,13 +6,14 @@
       :space-around="50"
       :watchSlidesProgress="true"
       navigation
-      :pagination="{ dynamicBullets: true, }"
+      :pagination="{ dynamicBullets: true }"
       :loop="true"
     >
       <swiper-slide class="swiper__img" v-for="index in 17" :key="index"
-        ><img class="img" :src="`/img/${index}.jpeg`" alt="" loading="lazy"
+        ><img class="img" :src="`/img/${index}.jpeg`" alt=""
       /></swiper-slide>
     </swiper>
+    <hr />
   </div>
 </template>
 
@@ -30,11 +31,11 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.slider{
+.slider {
   @include fluid("margin-top", 100);
   user-select: none;
 }
-.swiper__img{
+.swiper__img {
   display: flex;
   align-self: center;
 }
