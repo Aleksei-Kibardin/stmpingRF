@@ -175,8 +175,13 @@ nav {
   .menu-btn {
     display: flex;
   }
-  .nav-contact--btn{
+  .nav-contact--btn {
     width: 42%;
+  }
+  .btn {
+    border-radius: 16px;
+    @include fluid("font-size", 20);
+    @include fluid("padding", 16);
   }
   .nav--ancors {
     background: #e8f0ff;
@@ -199,6 +204,13 @@ nav {
     opacity: 1;
     width: 100%;
     transform: translateX(0px);
+  }
+}
+@media (min-width: 200px) and (max-width: 300px) {
+  .btn {
+    border-radius: 16px;
+    @include fluid("font-size", 16);
+    @include fluid("padding", 6);
   }
 }
 </style>
