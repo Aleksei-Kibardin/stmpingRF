@@ -242,6 +242,9 @@ const cards = [
   }
 }
 @media (max-width: 991px) {
+  .title--activiti{
+    flex-direction: column;
+  }
   .card {
     margin-bottom: 50px;
   }
