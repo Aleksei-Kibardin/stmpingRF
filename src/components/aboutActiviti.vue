@@ -4,9 +4,7 @@
       <div class="title--activiti col-12">
         <h1>Направление деятельности</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-          tempor. Amet suspendisse praesent ipsum enim adipiscing. Eget risus
-          molestie sed feugiat dictumst pulvinar viverra
+          Наши возможности и экспертиза позволяют нам успешно работать в различных отраслях, обеспечивая высокое качество продукции и инновационные решения для наших клиентов.
         </p>
       </div>
     </div>
@@ -25,7 +23,7 @@
         </div>
         <div class="card--title">{{ t.title }}</div>
         <div>
-          {{ t.txt }}
+          {{ t.smallDesc }}
         </div>
       </div>
     </div>
@@ -46,22 +44,19 @@
       <div class="foo">
         <img src="../assets/industry 1@2x.png" alt="" />
         <p>
-          Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-          tempor.
+          Инновационные технологии и высокое качество продукции.
         </p>
       </div>
       <div class="foo">
         <img src="../assets/like (3) 1@2x.png" alt="" />
         <p>
-          Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-          tempor.
+          Эффективное управление цепочкой поставок и оперативная реакция на запросы.
         </p>
       </div>
       <div class="foo">
         <img src="../assets/stopwatch 1@2x.png" alt="" />
         <p>
-          Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia
-          tempor.
+          Оптимизированный процесс работы для повышения производительности и эффективности.
         </p>
       </div>
     </div>
@@ -72,30 +67,35 @@
 import { ref } from "vue";
 
 const currentCard = ref({
-  title: "Title",
-  txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+  title: "Космическая отрасль",
+  smallDesc: "",
+  txt: "Наша компания специализируется на предоставлении услуг для компаний, разрабатывающих продукцию в аэрокосмической отрасли. Мы предлагаем широкий выбор технологий производства и вариантов материалов, чтобы удовлетворить самые требовательные потребности наших клиентов.",
   color: "#1379fe5e",
 });
 
 const cards = [
   {
-    title: "Title",
-    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    title: "Космическая отрасль",
+    smallDesc: "Мы предлагаем широкий выбор технологий производства для аэрокосмической отрасли...",
+    txt: "Наша компания специализируется на предоставлении услуг для компаний, разрабатывающих продукцию в аэрокосмической отрасли. Мы предлагаем широкий выбор технологий производства и вариантов материалов, чтобы удовлетворить самые требовательные потребности наших клиентов.",
     color: "#1379fe5e",
   },
   {
-    title: "Title",
-    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    title: "Автомобильная промышленность",
+    smallDesc: "Штамповка.РФ помогает эффективно закупать детали для автомобильной промышленности...",
+    txt: "Штамповка.РФ — ваш надежный партнер в закупке нестандартных деталей для автомобильной промышленности. Мы предоставляем комплексный сервис для различных производственных процессов, чтобы обеспечить эффективность и качество вашей продукции.",
     color: "#feee135e",
   },
   {
-    title: "Title",
-    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    title: "Электроника и энергетика",
+    smallDesc: "Мы оптимизируем цепочки поставок для энергетических компаний и ускоряем разработку критически важных компонентов...",
+    txt: "Мы помогаем энергетическим компаниям оптимизировать свои цепочки поставок и ускорить разработку критически важных компонентов. Это сокращает время выполнения заказов и способствует созданию более гибкой и оперативно реагирующей производственной экосистемы.",
     color: "#fe4a135e",
   },
   {
-    title: "Title",
-    txt: "Lorem ipsum dolor sit amet consectetur. Tortor nibh feugiat lacinia tempor.",
+    title: "Медицинское оборудование",
+    smallDesc: "Наш опыт в цифровом производстве помогает компаниям в медицинской промышленности...",
+    txt: "Наш широкий спектр производственных технологий и вариантов биосовместимых материалов способствует предоставлению опыта цифрового производства компаниям, разрабатывающим продукцию в медицинской промышленности",
     color: "#56fe135e",
   },
 ];
@@ -126,7 +126,7 @@ const cards = [
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  @include fluid("font-size", 18);
+  @include fluid("font-size", 14);
   @include fluid("padding-top", 20);
   @include fluid("gap", 20);
   @include fluid("height", 275);
@@ -145,7 +145,7 @@ const cards = [
   }
 }
 .card--title {
-  @include fluid("font-size", 24);
+  @include fluid("font-size", 22);
   font-weight: 500;
 }
 .circl--card {
@@ -257,12 +257,14 @@ const cards = [
   }
   .card {
     margin-bottom: 50px;
+    @include fluid("height", 350);
     @include fluid("font-size", 26);
     .card--title{
       @include fluid("font-size", 36);
     }
   }
   .desc--activiti{
+    @include fluid("height", 300);
     h1{
       @include fluid("font-size", 39);
     }
