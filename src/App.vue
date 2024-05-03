@@ -205,6 +205,9 @@ nav {
     width: 100%;
     transform: translateX(0px);
   }
+  .swiper-button-next,.swiper-button-prev{
+    display: none;
+  }
 }
 @media (min-width: 200px) and (max-width: 300px) {
   .btn {
