@@ -33,7 +33,7 @@
     </div>
   </nav>
   <header-vue></header-vue>
-  <main>
+  <main @click="isActive = !isActive">
     <modal-form :modalActive="modalActive"></modal-form>
     <about-activiti></about-activiti>
     <gallery-vue></gallery-vue>
