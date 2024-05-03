@@ -186,18 +186,18 @@ nav {
   .nav--ancors {
     background: #e8f0ff;
     position: absolute;
+    flex-direction: column;
     justify-content: center;
-    align-self: center;
+    align-items: center;
     opacity: 0;
-    align-items: end;
-    @include fluid("margin-top", 125);
+    @include fluid("top", 100);
     @include fluid("gap", 40);
-    @include fluid("height", 53);
+    @include fluid("height", 500);
     transform: translateX(500px);
     transition: all 1s ease 0s;
     left: 0;
-    .anchor {
-      @include fluid("font-size", 20);
+    .ancor {
+      @include fluid("font-size", 40);
     }
   }
   .nav--ancors.active {
