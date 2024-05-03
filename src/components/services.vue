@@ -3,9 +3,9 @@
     <div class="title--services col-12">
       <h1>Услуги</h1>
       <p>
-        Помимо холодной листовой штамповки, мы осуществляем прокат тонких
-        профилей, холодную объемную штамповку, сварку больших партий из черных и
-        нержавеющих сталей, контактную сварку, сборку изделий, литье пластмасс.
+        Хотя штамповка является основным направлением нашей деятельности, мы
+        также постоянно расширяем свои возможности, предоставляя широкий спектр
+        услуг в других областях.
       </p>
     </div>
     <div class="row services--items">
@@ -42,38 +42,28 @@
         </p>
       </div>
       <div class="services--item col-3">
-        <h1>Заголовок</h1>
+        <h1>Проектирование Автоматизированных Линий Штамповки</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
-          Amet suspendisse praesent ipsum enim adipiscing
+          Мы предлагаем инновационные решения по созданию и изготовлению
+          автоматизированных линий штамповки, обеспечивая высокую эффективность
+          и надежность в производстве деталей.
         </p>
       </div>
       <div class="services--item col-3">
-        <h1>Заголовок</h1>
+        <h1>Производство Штампов для Холодной Листовой Штамповки</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
-          Amet suspendisse praesent ipsum enim adipiscing
+          Мы производим высококачественные штампы, для холодной листовой штамповки. Наши штампы
+          обеспечивают точность и эффективность производства деталей в различных
+          отраслях промышленности.
         </p>
       </div>
       <div class="services--item col-3">
-        <h1>Заголовок</h1>
+        <h1>Прототипирование и реверс-инжиниринг</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
-          Amet suspendisse praesent ipsum enim adipiscing
-        </p>
-      </div>
-      <div class="services--item col-3">
-        <h1>Заголовок</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
-          Amet suspendisse praesent ipsum enim adipiscing
-        </p>
-      </div>
-      <div class="services--item col-3">
-        <h1>Заголовок</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur. nibh feugiat lacinia tempor.
-          Amet suspendisse praesent ipsum enim adipiscing
+          Предоставляем предварительные прототипы с использованием различных
+          технологий внутри завода. Мы создаем прототипы, используя лазерную
+          резку, механическую обработку или штамповку деталей в соответствии с
+          вашими потребностями.
         </p>
       </div>
     </div>
@@ -88,6 +78,8 @@ export default {};
 @import "../fluid.sass";
 .title--services {
   text-align: center;
+  @include fluid("font-size", 20);
+  font-weight: 500;
   @include fluid("margin-top", 100);
   p {
     @include fluid("margin-top", 40);
@@ -105,14 +97,22 @@ export default {};
   align-items: center;
   justify-content: space-around;
   @include fluid("border-radius", 16);
-  @include fluid("height", 290);
+  @include fluid("height", 330);
   border: 1px solid #c8c8c8;
+  transition: 0.6s all ease;
   h1 {
-    @include fluid("font-size", 24);
+    @include fluid("font-size", 22);
   }
   p {
     @include fluid("font-size", 16);
   }
+}
+.services--item:hover {
+ box-shadow: 6px 10px 4px 4px #3030304d;
+transform: matrix3d(1.05, 0, 0, 0,
+                        0, 1.05, 0, 0,
+                        0, 0, 1.05, 0,
+                        0, 0, 0, 1);
 }
 @media (max-width: 991px) {
   .services--items {
