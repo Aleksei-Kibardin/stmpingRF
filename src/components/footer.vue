@@ -97,11 +97,12 @@ const scrollToAnchor = (anchor) => {
   background: #f6f6f6;
 }
 footer {
-  background: #323232;
+  background: #f6f6f6;
   @include fluid("font-size", 18);
   @include fluid("height", 200);
   .footer {
-    color: #b8b8b8;
+    border-top: 1px #000 solid;
+    color: #000;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -237,11 +238,11 @@ footer {
   .footer {
     flex-direction: row !important;
   }
-  .footer-row{
+  .footer-row {
     justify-content: space-around;
     flex-direction: column;
   }
-  .nav-ancors{
+  .nav-ancors {
     flex-direction: column;
   }
   footer {
