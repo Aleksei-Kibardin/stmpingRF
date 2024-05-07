@@ -43,18 +43,23 @@
         <div class="nav-ancors">
           <div class="nav-ancor" @click="scrollToAnchor('#section1')">
             Главная
+            <div class="ancor-line"></div>
           </div>
           <div class="nav-ancor" @click="scrollToAnchor('#section2')">
             Деятельность
+            <div class="ancor-line"></div>
           </div>
           <div class="nav-ancor" @click="scrollToAnchor('#section3')">
             Наша продукция
+            <div class="ancor-line"></div>
           </div>
           <div class="nav-ancor" @click="scrollToAnchor('#section4')">
             Услуги
+            <div class="ancor-line"></div>
           </div>
           <div class="nav-ancor" @click="scrollToAnchor('#section5')">
             Контакты
+            <div class="ancor-line"></div>
           </div>
         </div>
         <div class="phone contacts--item">+7-901-971-46-64</div>
@@ -186,6 +191,18 @@ footer {
   display: flex;
   @include fluid("gap", 20);
   cursor: pointer;
+}
+.ancor-line {
+  opacity: 0;
+  border: 1px #fff solid;
+  width: 0px;
+  transition: all 1s ease;
+}
+.nav-ancor:hover {
+  .ancor-line {
+    opacity: 1;
+    width: 100%;
+  }
 }
 .logo {
   @include fluid("width", 200);

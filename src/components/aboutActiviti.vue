@@ -109,6 +109,7 @@ const cards = [
   align-items: center;
   @include fluid("height", 200);
   @include fluid("font-size", 16);
+  @include fluid("margin-top", 100);
   h1 {
     @include fluid("font-size", 30);
   }

@@ -14,15 +14,26 @@
         <span></span>
       </div>
       <div class="nav--ancors col-6" :class="{ active: isActive }">
-        <div class="ancor" @click="scrollToAnchor('#section1')">Главная</div>
+        <div class="ancor" @click="scrollToAnchor('#section1')">
+          Главная
+          <div class="ancor-line"></div>
+        </div>
         <div class="ancor" @click="scrollToAnchor('#section2')">
           Деятельность
+          <div class="ancor-line"></div>
         </div>
         <div class="ancor" @click="scrollToAnchor('#section3')">
           Наша продукция
+          <div class="ancor-line"></div>
         </div>
-        <div class="ancor" @click="scrollToAnchor('#section4')">Услуги</div>
-        <div class="ancor" @click="scrollToAnchor('#section5')">Контакты</div>
+        <div class="ancor" @click="scrollToAnchor('#section4')">
+          Услуги
+          <div class="ancor-line"></div>
+        </div>
+        <div class="ancor" @click="scrollToAnchor('#section5')">
+          Контакты
+          <div class="ancor-line"></div>
+        </div>
       </div>
       <div class="nav-contact--btn col-3">
         <span> +7-901-971-46-64</span>
@@ -98,9 +109,17 @@ nav {
     cursor: pointer;
   }
 }
-.anchor {
-  z-index: 10;
-  cursor: pointer;
+.ancor-line {
+  opacity: 0;
+  border: 1px #000 solid;
+  width: 0px;
+  transition: all 1s ease;
+}
+.ancor:hover {
+  .ancor-line {
+    opacity: 1;
+    width: 100%;
+  }
 }
 .wrap-nav {
   display: flex;
@@ -205,7 +224,8 @@ nav {
     width: 100%;
     transform: translateX(0px);
   }
-  .swiper-button-next,.swiper-button-prev{
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
 }
