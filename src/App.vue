@@ -47,8 +47,8 @@
   <main @click="isActive = false">
     <modal-form :modalActive="modalActive"></modal-form>
     <about-activiti></about-activiti>
-    <gallery-vue></gallery-vue>
     <services-vue></services-vue>
+    <gallery-vue></gallery-vue>
   </main>
   <footerVue></footerVue>
 </template>
@@ -97,7 +97,7 @@ nav {
   @include fluid("height", 100);
   @include fluid("font-size", 20);
   position: fixed;
-  background-color: #e8f0ff;
+  background-color: #fff;
   width: 100%;
   z-index: 4;
   top: 0;
@@ -235,5 +235,51 @@ nav {
     @include fluid("font-size", 16);
     @include fluid("padding", 6);
   }
+}
+@media (min-width: 200px) and (max-width: 1100px) {
+  .swiper-button-prev::before,
+  .swiper-button-next::before {
+    content: "";
+    @include fluid("width", 60);
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: black !important;
+  @include fluid("top", -30);
+}
+.swiper-button-prev {
+  background: url(./assets/left.svg);
+  left: 40%;
+}
+.swiper-button-next {
+  background: url(./assets/right.svg);
+  right: 40%;
+}
+.swiper-button-prev::before,
+.swiper-button-next::before {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  border: #000 solid;
+  @include fluid("border-width", 2);
+  @include fluid("width", 40);
+  @include fluid("border-radius", 10);
+}
+.swiper {
+  overflow-x: clip !important;
+  overflow-y: clip;
+  overflow: visible;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  position: absolute;
+  @include fluid("font-size", 40);
+}
+.swiper-button-next:after {
+  @include fluid("right", -9);
+}
+.swiper-button-prev:after {
+  @include fluid("left", -9);
 }
 </style>

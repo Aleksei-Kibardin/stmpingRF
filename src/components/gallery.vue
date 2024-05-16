@@ -2,7 +2,7 @@
   <div class="slider" id="section3">
     <swiper
       :modules="modules"
-      :slides-per-view="2"
+      :slides-per-view="4"
       :space-around="50"
       :watchSlidesProgress="true"
       navigation
@@ -38,5 +38,8 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 .swiper__img {
   display: flex;
   align-self: center;
+}
+.wrap-btn-slider{
+  position: relative;
 }
 </style>

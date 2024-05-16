@@ -1,45 +1,36 @@
 <template>
   <div id="section1" class="head--container">
-    <div class="bg"></div>
+    <modal-form :modalActive="modalActive"></modal-form>
     <header class="container">
       <div class="row">
         <div class="content-header col-6">
-          <h1>Балтийский центр штамповки</h1>
-          <p>
-            Штамповка.рф – компания, специализирующаяся на штамповочных работах
-            полного цикла. Наш опытный коллектив занимается производством
-            изделий методом холодной листовой штамповки с 1994 года. Расположены
-            мы в городе Санкт-Петербурге.
-          </p>
-          <p>
-            Мы готовы предложить вам широкий спектр услуг. Для начала
-            сотрудничества достаточно связаться с нами и предоставить рисунок,
-            эскиз, чертеж или фотографию вашего изделия. Наши специалисты
-            проведут прочностные расчеты, учтут технологичность производства и
-            рабочие характеристики вашего продукта, а также рассчитают стоимость
-            запуска и производства.
-          </p>
-          <p>
-            Помимо холодной листовой штамповки, мы выполняем прокат тонких
-            профилей, холодную объемную штамповку, сварку больших партий из
-            черных и нержавеющих сталей, контактную сварку, сборку изделий и
-            литье пластмасс.
-          </p>
-          <p>
-            При необходимости, мы можем организовать фасовку продукции в
-            фирменную упаковку с вашим логотипом и дизайном.
-          </p>
-          <p>
-            Мы гарантируем качество выпускаемой продукции и стремимся к
-            долгосрочному и взаимовыгодному сотрудничеству с каждым клиентом.
-          </p>
+          <h1>Штамповка.рф - сложные штампы, простые решения</h1>
+          <div class="txt">
+            <hr />
+            <p>
+              До 800 изделий в минуту на одной линии От цветных металлов до
+              нержавеющей стали Сборка, фасовка, упаковка.
+            </p>
+          </div>
+          <div class="btn--wrap" @click="modalActive = !modalActive">
+            <div class="btn">
+              <span>Обсудить проект</span>
+            </div>
+            <div class="btn--item"><div class="btn--arrow"></div></div>
+          </div>
         </div>
+        <img class="img" src="../assets/Rectangle 18@1x.png" alt="" />
       </div>
     </header>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import modalForm from "./modalForm.vue";
+
+const modalActive = ref(false);
+</script>
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
@@ -47,24 +38,24 @@
   @include fluid("margin-top", 70);
   height: 100vh;
 }
-.bg {
-  position: absolute;
-  background: url("../assets/Rectangle 18@1x.png") no-repeat;
-  background-size: cover;
-  filter: brightness(70%);
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+.img {
+  box-shadow: 230px 100px 0 0 #b5cbd4;
+  width: 600px;
+  height: 600px;
 }
+
 .content-header {
-  color: #fff;
+  color: #000;
   h1 {
-    @include fluid("font-size", 40);
+    @include fluid("font-size", 50);
+  }
+  .txt {
+    margin-top: 30px;
+    width: 70%;
   }
   p {
     @include fluid("margin-top", 20);
-    @include fluid("font-size", 18);
-    text-shadow: 1px 1px #000000;
+    @include fluid("font-size", 20);
   }
 }
 .container {
@@ -82,5 +73,17 @@
       @include fluid("font-size", 26);
     }
   }
+}
+.btn {
+  font-weight: 700;
+  cursor: pointer;
+  width: auto;
+  margin-top: 130px;
+  text-align: center;
+  width: 230px;
+  padding: 10px;
+  font-size: 20px;
+  background: #bb9760 !important;
+  border-radius: 0;
 }
 </style>
