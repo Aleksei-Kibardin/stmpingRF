@@ -19,7 +19,7 @@
             <div class="btn--item"><div class="btn--arrow"></div></div>
           </div>
         </div>
-        <img class="img" src="../assets/hEWoBoTVo2s.jpg" alt="" />
+        <img class="img" src="http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg" alt="" />
       </div>
     </header>
   </div>
