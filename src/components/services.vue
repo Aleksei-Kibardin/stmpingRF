@@ -7,6 +7,12 @@
       </div>
     </div>
     <div class="row services--items">
+      <div class="prev-services serv-btn col-3"></div>
+      <div class="current-services col-6">
+        <img class="serv-img" src="../assets/A523Z8WBWHQ.jpg" alt="" />
+        <div class="serv-desc"></div>
+      </div>
+      <div class="next-services serv-btn col-3"></div>
       <!-- <div class="services--item col-3">
         <h1>Холодная штамповка</h1>
         <p>
@@ -74,10 +80,10 @@ export default {};
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.line{
+.line {
   border: 1px #000 solid;
-  margin-top: 50px;
-  width: 250px;
+  @include fluid("width", 250);
+  @include fluid("margin-top", 20);
   margin: 20px auto auto auto;
 }
 .title--services {
@@ -86,56 +92,79 @@ export default {};
   font-weight: 500;
   @include fluid("margin-top", 100);
 }
+.serv-btn {
+  background: #b5cbd4;
+}
 .services--items {
-  justify-content: center;
-  @include fluid("gap", 20);
-  @include fluid("margin-top", 100);
-  @include fluid("margin-bottom", 100);
-}
-.services--item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  @include fluid("border-radius", 16);
-  @include fluid("height", 330);
-  border: 1px solid #c8c8c8;
-  transition: 0.6s all ease;
-  h1 {
-    @include fluid("font-size", 22);
-  }
-  p {
-    @include fluid("font-size", 16);
-  }
+  justify-content: center;
+  @include fluid("height", 400);
+  padding: 0;
+  @include fluid("margin-top", 70);
 }
-.services--item:hover {
- box-shadow: 6px 10px 4px 4px #3030304d;
-transform: matrix3d(1.05, 0, 0, 0,
-                        0, 1.05, 0, 0,
-                        0, 0, 1.05, 0,
-                        0, 0, 0, 1);
+.serv-desc {
+  width: 50%;
+  padding: 0;
+  height: 400px;
+  background: #dceaf0;
 }
-@media (max-width: 991px) {
-  .services--items {
-    justify-content: center;
-    @include fluid("gap", 80);
-  }
-  .services--item {
-    box-shadow: 0px 3px 4px 1px #8f8f8f5b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    @include fluid("border-radius", 16);
-    @include fluid("height", 290);
-    width: 90%;
-    border: 1px solid #c8c8c8;
-    h1 {
-      @include fluid("font-size", 36);
-    }
-    p {
-      @include fluid("font-size", 33);
-    }
-  }
+.serv-img {
+  width: 50%;
+  height: 400px;
+  padding: 0;
 }
+.current-services {
+  gap: 0;
+  display: flex;
+  padding: 0;
+}
+// .services--items {
+//   justify-content: center;
+//   @include fluid("gap", 20);
+//   @include fluid("margin-top", 100);
+//   @include fluid("margin-bottom", 100);
+// }
+// .services--item {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   @include fluid("border-radius", 16);
+//   @include fluid("height", 330);
+//   border: 1px solid #c8c8c8;
+//   transition: 0.6s all ease;
+//   h1 {
+//     @include fluid("font-size", 22);
+//   }
+//   p {
+//     @include fluid("font-size", 16);
+//   }
+// }
+// .services--item:hover {
+//   box-shadow: 6px 10px 4px 4px #3030304d;
+//   transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1);
+// }
+// @media (max-width: 991px) {
+//   .services--items {
+//     justify-content: center;
+//     @include fluid("gap", 80);
+//   }
+//   .services--item {
+//     box-shadow: 0px 3px 4px 1px #8f8f8f5b;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-around;
+//     @include fluid("border-radius", 16);
+//     @include fluid("height", 290);
+//     width: 90%;
+//     border: 1px solid #c8c8c8;
+//     h1 {
+//       @include fluid("font-size", 36);
+//     }
+//     p {
+//       @include fluid("font-size", 33);
+//     }
+//   }
+// }
 </style>

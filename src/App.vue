@@ -78,6 +78,10 @@ const scrollToAnchor = (anchor) => {
 
 <style lang="scss">
 @import "./fluid.sass";
+:root{
+  @include fluid("--box-x", 230);
+  @include fluid("--box-y", 100);
+}
 .container {
   @include fluid("max-width", 1400);
 }
@@ -281,5 +285,8 @@ nav {
 }
 .swiper-button-prev:after {
   @include fluid("left", -9);
+}
+.swiper-wrapper{
+  @include fluid("gap", 40);
 }
 </style>

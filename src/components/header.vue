@@ -8,8 +8,17 @@
           <div class="txt">
             <hr />
             <p>
-              До 800 изделий в минуту на одной линии От цветных металлов до
-              нержавеющей стали Сборка, фасовка, упаковка.
+              Добро пожаловать на страницу производственной компании
+              ШТАМПОВКА.РФ! <br />
+              Наше предприятие выполняет все виды объёмной холодной штамповки
+              чёрных и цветных металлов на современных металлообрабатывающих
+              комплексов с ЧПУ.<br />
+              Мы производим серийные и мелкосерийные партии изделий по образцам
+              и чертежам заказчиков.<br />
+              Выполняем все виды смежных работ от разработки технической
+              документации на изделия до их брендирования и индивидуальной
+              упаковки. Оказываем помощь в приобретении оборудования для
+              металлообработки<br />
             </p>
           </div>
           <div class="btn--wrap" @click="modalActive = !modalActive">
@@ -19,7 +28,11 @@
             <div class="btn--item"><div class="btn--arrow"></div></div>
           </div>
         </div>
-        <img class="img" src="http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg" alt="" />
+        <img
+          class="img"
+          src="http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg"
+          alt=""
+        />
       </div>
     </header>
   </div>
@@ -39,9 +52,9 @@ const modalActive = ref(false);
   height: 100vh;
 }
 .img {
-  box-shadow: 230px 100px 0 0 #b5cbd4;
-  width: 600px;
-  height: 600px;
+  box-shadow: var(--box-x) 100px 0 0 #b5cbd4;
+  @include fluid("width", 600);
+  @include fluid("height", 600);
 }
 
 .content-header {
@@ -50,12 +63,12 @@ const modalActive = ref(false);
     @include fluid("font-size", 50);
   }
   .txt {
-    margin-top: 30px;
+    @include fluid("margin-top", 30);
     width: 70%;
   }
   p {
     @include fluid("margin-top", 20);
-    @include fluid("font-size", 20);
+    @include fluid("font-size", 18);
   }
 }
 .container {
@@ -75,15 +88,15 @@ const modalActive = ref(false);
   }
 }
 .btn {
+  background: #bb9760 !important;
   font-weight: 700;
   cursor: pointer;
   width: auto;
-  margin-top: 130px;
   text-align: center;
-  width: 230px;
-  padding: 10px;
-  font-size: 20px;
-  background: #bb9760 !important;
+  @include fluid("margin-top", 50);
+  @include fluid("width", 230);
+  @include fluid("padding", 10);
+  @include fluid("font-size", 20);
   border-radius: 0;
 }
 </style>

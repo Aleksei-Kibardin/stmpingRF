@@ -1,8 +1,12 @@
 <template>
+  <div class="wrap--title-gallery">
+    <h1 class="title-gallery">Примеры продукции <hr></h1>
+  </div>
+
   <div class="slider" id="section3">
     <swiper
       :modules="modules"
-      :slides-per-view="4"
+      :slides-per-view="5"
       :space-around="50"
       :watchSlidesProgress="true"
       navigation
@@ -39,7 +43,16 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
   display: flex;
   align-self: center;
 }
-.wrap-btn-slider{
+.wrap-btn-slider {
   position: relative;
+}
+.wrap--title-gallery {
+  display: flex;
+  justify-content: center;
+  @include fluid("margin-top", 200);
+}
+.title-gallery {
+  @include fluid("font-size", 40);
+  @include fluid("width", 400);
 }
 </style>
