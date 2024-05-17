@@ -19,7 +19,7 @@
             <div class="btn--item"><div class="btn--arrow"></div></div>
           </div>
         </div>
-        <img class="img" src="../assets/Rectangle 18@1x.png" alt="" />
+        <img class="img" src="../assets/hEWoBoTVo2s.jpg" alt="" />
       </div>
     </header>
   </div>

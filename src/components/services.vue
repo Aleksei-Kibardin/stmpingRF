@@ -1,15 +1,13 @@
 <template>
   <div id="section4" class="container">
     <div class="title--services col-12">
-      <h1>Услуги</h1>
-      <p>
-        Хотя штамповка является основным направлением нашей деятельности, мы
-        также постоянно расширяем свои возможности, предоставляя широкий спектр
-        услуг в других областях.
-      </p>
+      <div>
+        <h1>Наши услуги</h1>
+        <div class="line"></div>
+      </div>
     </div>
     <div class="row services--items">
-      <div class="services--item col-3">
+      <!-- <div class="services--item col-3">
         <h1>Холодная штамповка</h1>
         <p>
           Мы предлагаем широкий спектр услуг по холодной штамповке, гарантируя
@@ -65,7 +63,7 @@
           резку, механическую обработку или штамповку деталей в соответствии с
           вашими потребностями.
         </p>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -76,14 +74,17 @@ export default {};
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
+.line{
+  border: 1px #000 solid;
+  margin-top: 50px;
+  width: 250px;
+  margin: 20px auto auto auto;
+}
 .title--services {
   text-align: center;
   @include fluid("font-size", 20);
   font-weight: 500;
   @include fluid("margin-top", 100);
-  p {
-    @include fluid("margin-top", 40);
-  }
 }
 .services--items {
   justify-content: center;

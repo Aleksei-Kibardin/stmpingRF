@@ -1,13 +1,13 @@
 <template>
   <div id="section2" class="container">
     <div class="row">
-      <img src="" alt="">
+      <img class="img" src="../assets/rIhFX-UENas.jpg" alt="">
       <div class="title--activiti col-6">
         <h1>
           О нас
           <hr />
         </h1>
-        <h3>Предприятие штамповка РФ это:</h3>
+        <h2>Предприятие штамповка РФ это:</h2>
         <p>
           2.5 тысяч тонн выпускаемой продукции ежегодно. Ручная,
           полуавтоматическая, автоматическая и прогрессивная штамповка. Расчёт и
@@ -19,58 +19,6 @@
           3 шага до начала производства: Направление чертежа\образца продукции
           Согласование требуемых характеристик готового продукта Заключение
           договора и старт производства
-        </p>
-      </div>
-    </div>
-    <div class="row cards">
-      <div
-        class="card col-3"
-        v-for="(t, i) in cards"
-        :key="(t, i)"
-        :style="{ background: t.color }"
-        @click="currentCard = t"
-      >
-        <div class="wrap-circl--card">
-          <div class="circl--card" :style="{ background: t.color }">
-            {{ i + 1 }}
-          </div>
-        </div>
-        <div class="card--title">{{ t.title }}</div>
-        <div>
-          {{ t.smallDesc }}
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div
-        class="desc--activiti col-12"
-        :style="{ background: currentCard.color }"
-      >
-        <h1>{{ currentCard.title }}</h1>
-        <p>
-          {{ currentCard.txt }}
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="activiti--footer">
-    <div class="container activiti--footer--items">
-      <div class="foo">
-        <img src="../assets/industry 1@2x.png" alt="" />
-        <p>Инновационные технологии и высокое качество продукции.</p>
-      </div>
-      <div class="foo">
-        <img src="../assets/like (3) 1@2x.png" alt="" />
-        <p>
-          Эффективное управление цепочкой поставок и оперативная реакция на
-          запросы.
-        </p>
-      </div>
-      <div class="foo">
-        <img src="../assets/stopwatch 1@2x.png" alt="" />
-        <p>
-          Оптимизированный процесс работы для повышения производительности и
-          эффективности.
         </p>
       </div>
     </div>
@@ -125,13 +73,20 @@ const cards = [
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: left;
   @include fluid("height", 200);
   @include fluid("font-size", 16);
   @include fluid("margin-top", 100);
+  @include fluid("margin-left", 100);
   h1 {
+    @include fluid("font-size", 40);
+  }
+  h2{
     @include fluid("font-size", 30);
   }
+}
+.img{
+  box-shadow: -350px -100px 0  0 #b5cbd4;
 }
 .cards {
   width: 100%;
