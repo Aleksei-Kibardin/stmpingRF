@@ -1,5 +1,6 @@
 <template>
   <div id="section4" class="container">
+    <div class="mt-100"></div>
     <div class="title--services col-12">
       <div>
         <h1>Наши услуги</h1>
@@ -7,12 +8,30 @@
       </div>
     </div>
     <div class="row services--items">
-      <div class="prev-services serv-btn col-3"></div>
-      <div class="current-services col-6">
-        <img class="serv-img" src="../assets/A523Z8WBWHQ.jpg" alt="" />
-        <div class="serv-desc"></div>
+      <div class="prev-services serv-btn col-3">
+        <div class="next-slide">Ручная холодная листовая штамповка</div>
+        <div class="arrow--prev arrow"></div>
       </div>
-      <div class="next-services serv-btn col-3"></div>
+      <img class="serv-img col-3" src="../assets/A523Z8WBWHQ.jpg" alt="" />
+      <div class="serv-desc col-3">
+        <div class="serv--title">
+          Автоматическая холодная листовая штамповка
+        </div>
+        <div class="serv--txt">
+          Строительные крепления, монтажные кляймеры, клипсы, электрические
+          зажимы и контакты, нестандартные и стандартные шайбы, уголки,
+          колпачки, держатели, прижимы и прочее прочее. Наша основная работа.
+          Автоматической штамповкой изготавливаются детали крупных партий. Этот
+          метод обработки металлов дешевле, быстрее и удобнее иных видов
+          обработки металлов.
+        </div>
+      </div>
+      <div class="next-services serv-btn col-3">
+        <div class="arrow--next arrow"></div>
+        <div class="next-slide">
+          Серийная сварка изделий из черных и цветных металлов
+        </div>
+      </div>
       <!-- <div class="services--item col-3">
         <h1>Холодная штамповка</h1>
         <p>
@@ -93,6 +112,13 @@ export default {};
   @include fluid("margin-top", 100);
 }
 .serv-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include fluid("gap", 50);
+  color: #fff;
+  @include fluid("font-size", 20);
+  font-weight: 700;
   background: #b5cbd4;
 }
 .services--items {
@@ -103,14 +129,24 @@ export default {};
   @include fluid("margin-top", 70);
 }
 .serv-desc {
-  width: 50%;
-  padding: 0;
-  height: 400px;
+  display: flex;
+  @include fluid("gap", 40);
+  @include fluid("height", 400);
+  @include fluid("padding", 40);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: #dceaf0;
+  .serv--title {
+    @include fluid("font-size", 20);
+    font-weight: 700;
+  }
+  .serv--txt {
+    @include fluid("font-size", 12);
+  }
 }
 .serv-img {
-  width: 50%;
-  height: 400px;
+  @include fluid("height", 400);
   padding: 0;
 }
 .current-services {
@@ -118,53 +154,16 @@ export default {};
   display: flex;
   padding: 0;
 }
-// .services--items {
-//   justify-content: center;
-//   @include fluid("gap", 20);
-//   @include fluid("margin-top", 100);
-//   @include fluid("margin-bottom", 100);
-// }
-// .services--item {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   @include fluid("border-radius", 16);
-//   @include fluid("height", 330);
-//   border: 1px solid #c8c8c8;
-//   transition: 0.6s all ease;
-//   h1 {
-//     @include fluid("font-size", 22);
-//   }
-//   p {
-//     @include fluid("font-size", 16);
-//   }
-// }
-// .services--item:hover {
-//   box-shadow: 6px 10px 4px 4px #3030304d;
-//   transform: matrix3d(1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1.05, 0, 0, 0, 0, 1);
-// }
-// @media (max-width: 991px) {
-//   .services--items {
-//     justify-content: center;
-//     @include fluid("gap", 80);
-//   }
-//   .services--item {
-//     box-shadow: 0px 3px 4px 1px #8f8f8f5b;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: space-around;
-//     @include fluid("border-radius", 16);
-//     @include fluid("height", 290);
-//     width: 90%;
-//     border: 1px solid #c8c8c8;
-//     h1 {
-//       @include fluid("font-size", 36);
-//     }
-//     p {
-//       @include fluid("font-size", 33);
-//     }
-//   }
-// }
+.arrow {
+  @include fluid("padding", 15);
+  border: #fff solid;
+  border-top: 1px;
+  border-left: 1px;
+}
+.arrow--next {
+  transform: rotate(-45deg);
+}
+.arrow--prev {
+  transform: rotate(135deg);
+}
 </style>

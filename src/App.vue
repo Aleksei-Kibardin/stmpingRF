@@ -22,15 +22,19 @@
           Деятельность
           <div class="ancor-line"></div>
         </div>
-        <div class="ancor" @click="scrollToAnchor('#section3')">
-          Наша продукция
-          <div class="ancor-line"></div>
-        </div>
         <div class="ancor" @click="scrollToAnchor('#section4')">
           Услуги
           <div class="ancor-line"></div>
         </div>
+        <div class="ancor" @click="scrollToAnchor('#section3')">
+          Наша продукция
+          <div class="ancor-line"></div>
+        </div>
         <div class="ancor" @click="scrollToAnchor('#section5')">
+          Этапы работы
+          <div class="ancor-line"></div>
+        </div>
+        <div class="ancor" @click="scrollToAnchor('#section6')">
           Контакты
           <div class="ancor-line"></div>
         </div>
@@ -49,6 +53,7 @@
     <about-activiti></about-activiti>
     <services-vue></services-vue>
     <gallery-vue></gallery-vue>
+    <about-Work></about-Work>
   </main>
   <footerVue></footerVue>
 </template>
@@ -61,6 +66,7 @@ import servicesVue from "./components/services.vue";
 import footerVue from "./components/footer.vue";
 import modalForm from "./components/modalForm.vue";
 import { ref } from "vue";
+import aboutWork from "./components/aboutWork.vue";
 
 const isActive = ref(false);
 
@@ -70,6 +76,7 @@ const scrollToAnchor = (anchor) => {
   const element = document.querySelector(anchor);
   if (element) {
     element.scrollIntoView({
+      top: 1000,
       behavior: "smooth",
     });
   }
@@ -99,7 +106,7 @@ body::-webkit-scrollbar-thumb {
 }
 nav {
   @include fluid("height", 100);
-  @include fluid("font-size", 20);
+  @include fluid("font-size", 14);
   position: fixed;
   background-color: #fff;
   width: 100%;
@@ -135,17 +142,25 @@ nav {
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
+  span{
+    @include fluid("font-size", 16);
+  }
 }
 .btn {
-  border-radius: 6px;
-  background: #0080a7;
+  background: #cb9a74 ;
   color: #fff;
-  @include fluid("padding", 6);
-  @include fluid("font-size", 15);
+  font-weight: 700;
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+  @include fluid("width", 180);
+  @include fluid("padding", 10);
+  @include fluid("font-size", 16);
+  border-radius: 0;
   transition: 1s all ease;
 }
 .btn:hover {
-  background: #00a3d4;
+  background: #ff9747;
 }
 .menu-btn.active::before {
   position: relative;
@@ -250,7 +265,7 @@ nav {
 .swiper-button-prev,
 .swiper-button-next {
   color: black !important;
-  @include fluid("top", -30);
+  @include fluid("top", -90);
 }
 .swiper-button-prev {
   background: url(./assets/left.svg);
@@ -287,6 +302,9 @@ nav {
   @include fluid("left", -9);
 }
 .swiper-wrapper{
-  @include fluid("gap", 40);
+  @include fluid("gap", 100);
+}
+.mt-100{
+  height: 100px;
 }
 </style>

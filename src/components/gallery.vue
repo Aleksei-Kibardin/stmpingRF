@@ -1,12 +1,13 @@
 <template>
+  <div id="section3" class="mt-100"></div>
   <div class="wrap--title-gallery">
     <h1 class="title-gallery">Примеры продукции <hr></h1>
   </div>
 
-  <div class="slider" id="section3">
+  <div class="slider">
     <swiper
       :modules="modules"
-      :slides-per-view="5"
+      :slides-per-view="7"
       :space-around="50"
       :watchSlidesProgress="true"
       navigation
@@ -17,7 +18,6 @@
         ><img class="img" :src="`/img/${index}.jpeg`" alt=""
       /></swiper-slide>
     </swiper>
-    <hr />
   </div>
 </template>
 
@@ -42,6 +42,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 .swiper__img {
   display: flex;
   align-self: center;
+  border-top: 1px #000 solid;
 }
 .wrap-btn-slider {
   position: relative;
@@ -53,6 +54,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 }
 .title-gallery {
   @include fluid("font-size", 40);
-  @include fluid("width", 400);
+  @include fluid("width", 396);
+  @include fluid("margin-bottom", 70);
 }
 </style>

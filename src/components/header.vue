@@ -88,7 +88,8 @@ const modalActive = ref(false);
   }
 }
 .btn {
-  background: #bb9760 !important;
+  background: #cb9a74;
+  color: #fff;
   font-weight: 700;
   cursor: pointer;
   width: auto;
@@ -98,5 +99,9 @@ const modalActive = ref(false);
   @include fluid("padding", 10);
   @include fluid("font-size", 20);
   border-radius: 0;
+  transition: 1s all ease;
+}
+.btn:hover {
+  background: #ff9747;
 }
 </style>

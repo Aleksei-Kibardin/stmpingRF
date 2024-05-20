@@ -1,5 +1,6 @@
 <template>
   <div id="section2" class="container">
+    <div class="mt-100"></div>
     <div class="row">
       <img class="img" src="../assets/rIhFX-UENas.jpg" alt="">
       <div class="title--activiti col-6">

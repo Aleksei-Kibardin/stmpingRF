@@ -1,75 +1,31 @@
 <template>
   <modal-form :modalActive="modalActive"></modal-form>
-  <div id="section5" class="row">
+  <footer id="section6" class="row">
     <div class="container">
-      <h1>Контакты компании</h1>
+      <h1>Контакты</h1>
       <div class="contacts">
-        <div class="contacts-items col-6">
-          <h3>Контактные данные</h3>
-          <div class="phone contacts--item">
-            <span>Телефон:</span> +7-901-971-46-64
-          </div>
-          <div class="address contacts--item">
-            <span>Адресс:</span> г. Санкт-Петербург, Лиговский проспект, 52 К
-          </div>
-          <div class="email contacts--item">
-            <span>Email:</span> spb9714664@yandex.ru
-          </div>
-          <div class="btn--wrap" @click="modalActive = !modalActive">
-            <div class="btn">
-              <span>Оставить заявку</span>
-            </div>
-            <div class="btn--item"><div class="btn--arrow"></div></div>
-          </div>
-        </div>
         <div class="map col-6">
           <img
             src="https://static-maps.yandex.ru/v1?ll=30.358134,59.925083&size=650,450&z=16&pt=30.358134,59.925083,pm2rdl&apikey=625b26d9-342a-4cd9-a91b-6af62e134a40"
             alt=""
           />
         </div>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <div class="container footer">
-      <div class="footer-row">
-        <div class="logo">
-          <img
-            src="https://static.tildacdn.com/tild3936-3536-4362-b232-613362633237/__.png"
-            alt=""
-          />
+        <div class="contacts-items col-6">
+          <h3>Штамповка.рф © 2024</h3>
+          <div class="address contacts--item">
+            <span>Адресс:</span> г. Санкт-Петербург, Лиговский проспект, 52 К
+          </div>
+          <div class="address contacts--item">
+            <span>Инженерный отдел:</span>
+          </div>
+          <div class="phone contacts--item">
+            <span>Телефон:</span> +7-901-971-46-64
+          </div>
+          <div class="email contacts--item">
+            <span>Электронная почта:</span> spb9714664@yandex.ru
+          </div>
+          <div class="btn">Связаться</div>
         </div>
-        <div class="nav-ancors">
-          <div class="nav-ancor" @click="scrollToAnchor('#section1')">
-            Главная
-            <div class="ancor-line"></div>
-          </div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section2')">
-            Деятельность
-            <div class="ancor-line"></div>
-          </div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section3')">
-            Наша продукция
-            <div class="ancor-line"></div>
-          </div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section4')">
-            Услуги
-            <div class="ancor-line"></div>
-          </div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section5')">
-            Контакты
-            <div class="ancor-line"></div>
-          </div>
-        </div>
-        <div class="phone contacts--item">+7-901-971-46-64</div>
-      </div>
-      <div class="footer-row">
-        <span>© Все права защищены. 2024</span>
-        <div class="address contacts--item">
-          г. Санкт-Петербург, Лиговский проспект, 52 К
-        </div>
-        <div class="email contacts--item">spb9714664@yandex.ru</div>
       </div>
     </div>
   </footer>
@@ -93,25 +49,18 @@ const scrollToAnchor = (anchor) => {
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.row {
-  background: #f6f6f6;
-}
-footer {
-  background: #f6f6f6;
-  @include fluid("font-size", 18);
-  @include fluid("height", 200);
-  .footer {
-    border-top: 1px #000 solid;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-}
+
 .container {
+  @include fluid("margin-top", 100);
+  @include fluid("margin-bottom", 100);
   text-align: center;
   h1 {
-    margin-bottom: 50px;
+    @include fluid("margin-bottom", 150);
+    @include fluid("font-size", 40);
+    @include fluid("border-width", 1);
+    border-bottom: #000 solid;
+    @include fluid("width", 200);
+    margin: auto;
   }
 }
 .contacts {
@@ -120,9 +69,12 @@ footer {
 }
 .contacts--item {
   span {
-    margin-right: 20px;
+    margin-right: 5px;
     color: #494848;
   }
+}
+.map {
+  box-shadow: -250px -100px 0 0 #b5cbd4;
 }
 .contacts-items {
   text-align: start;
@@ -136,124 +88,29 @@ footer {
   justify-content: center;
 }
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #cb9a74;
   color: #fff;
-  background: #007fa7;
-  border-radius: 6px 0 0 6px;
-  width: 100%;
+  font-weight: 700;
   cursor: pointer;
-  @include fluid("min-width", 220);
-  @include fluid("font-size", 25);
-  @include fluid("height", 48);
+  width: auto;
+  text-align: center;
+  @include fluid("margin-top", 50);
+  @include fluid("width", 230);
+  @include fluid("padding", 10);
+  @include fluid("font-size", 20);
+  border-radius: 0;
+  transition: 1s all ease;
 }
-.btn--item {
-  position: relative;
-  border-radius: 0 6px 6px 0;
-  background: #006f92;
-  align-self: flex-end;
-  height: 100%;
-  @include fluid("width", 57);
-  cursor: pointer;
-  transition: all 0.5s ease;
+.btn:hover {
+  background: #ff9747;
 }
-.btn--item:hover {
-  background: #007fa7;
-}
-.btn--item::before {
-  content: "";
-  position: absolute;
-  border: #fff solid;
-  @include fluid("border-width", 1);
-  @include fluid("width", 19);
-  @include fluid("top", 24);
-  @include fluid("left", 11);
-}
-.btn--item::after {
-  content: "";
-  position: absolute;
-  border: 0px #fff solid;
-  @include fluid("border-bottom-width", 2);
-  @include fluid("border-right-width", 2);
-  @include fluid("width", 10);
-  @include fluid("height", 10);
-  @include fluid("top", 20);
-  @include fluid("left", 21);
-  transform: rotate(-45deg);
-}
-.footer-row {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  width: 100%;
-}
-.nav-ancors {
-  display: flex;
-  @include fluid("gap", 20);
-  cursor: pointer;
-}
-.ancor-line {
-  opacity: 0;
-  border: 1px #fff solid;
-  width: 0px;
-  transition: all 1s ease;
-}
-.nav-ancor:hover {
-  .ancor-line {
-    opacity: 1;
-    width: 100%;
-  }
-}
-.logo {
-  @include fluid("width", 200);
-}
+
 @media (min-width: 200px) and (max-width: 500px) {
   .contacts {
     flex-direction: column;
   }
-  .btn {
-    @include fluid("height", 100);
-    @include fluid("width", 500);
-    @include fluid("font-size", 55);
-  }
-  .btn--item {
-    @include fluid("height", 100);
-    @include fluid("width", 100);
-  }
-  .btn--item::before {
-    @include fluid("border-width", 1);
-    @include fluid("width", 50);
-    @include fluid("top", 50);
-    @include fluid("left", 20);
-  }
-  .btn--item::after {
-    @include fluid("border-bottom-width", 5);
-    @include fluid("border-right-width", 5);
-    @include fluid("width", 30);
-    @include fluid("height", 30);
-    @include fluid("top", 38);
-    @include fluid("left", 40);
-  }
   .footer {
     flex-direction: row !important;
-  }
-  .footer-row {
-    justify-content: space-around;
-    flex-direction: column;
-  }
-  .nav-ancors {
-    flex-direction: column;
-  }
-  footer {
-    width: 100%;
-    height: 300px;
-    @include fluid("font-size", 35);
-  }
-}
-@media (min-width: 200px) and (max-width: 300px) {
-  .nav-ancors {
-    display: none;
   }
 }
 </style>
