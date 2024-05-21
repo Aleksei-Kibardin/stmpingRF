@@ -74,7 +74,7 @@ const scrollToAnchor = (anchor) => {
   }
 }
 .map {
-  box-shadow: -250px -100px 0 0 #b5cbd4;
+  box-shadow: var(--last-box-x) var(--last-box-y) 0 0 #b5cbd4;
 }
 .contacts-items {
   text-align: start;

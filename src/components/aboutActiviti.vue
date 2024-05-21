@@ -1,8 +1,8 @@
 <template>
   <div id="section2" class="container">
     <div class="mt-100"></div>
-    <div class="row">
-      <img class="img" src="../assets/rIhFX-UENas.jpg" alt="">
+    <div class="row wrap-content--activiti">
+      <img class="img col-6" src="../assets/rIhFX-UENas.jpg" alt="">
       <div class="title--activiti col-6">
         <h1>
           О нас
@@ -70,6 +70,10 @@ const cards = [
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
+.wrap-content--activiti{
+  justify-content: center;
+  @include fluid("gap", 100);
+}
 .title--activiti {
   display: flex;
   flex-direction: column;
@@ -77,8 +81,7 @@ const cards = [
   text-align: left;
   @include fluid("height", 200);
   @include fluid("font-size", 16);
-  @include fluid("margin-top", 100);
-  @include fluid("margin-left", 100);
+  @include fluid("margin-top", 170);
   h1 {
     @include fluid("font-size", 40);
   }
@@ -90,7 +93,9 @@ const cards = [
   }
 }
 .img{
-  box-shadow: -350px -100px 0  0 #b5cbd4;
+  box-shadow: var(--midle-box-x) var(--midle-box-y)  0  0 #b5cbd4;
+  @include fluid("width", 490);
+  @include fluid("height", 517);
 }
 @media (max-width: 991px) {
   .title--activiti {

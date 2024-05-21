@@ -86,8 +86,12 @@ const scrollToAnchor = (anchor) => {
 <style lang="scss">
 @import "./fluid.sass";
 :root{
-  @include fluid("--box-x", 230);
-  @include fluid("--box-y", 100);
+  @include fluid("--head-box-x", 230);
+  @include fluid("--head-box-y", 100);
+  @include fluid("--midle-box-x", -350);
+  @include fluid("--midle-box-y", -100);
+  @include fluid("--last-box-x", -250);
+  @include fluid("--last-box-y", -100);
 }
 .container {
   @include fluid("max-width", 1400);
@@ -303,6 +307,9 @@ nav {
 }
 .swiper-wrapper{
   @include fluid("gap", 100);
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+  @include fluid("top", -97);
 }
 .mt-100{
   height: 100px;

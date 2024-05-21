@@ -2,7 +2,7 @@
   <div id="section1" class="head--container">
     <modal-form :modalActive="modalActive"></modal-form>
     <header class="container">
-      <div class="row">
+      <div class="row row-wrap">
         <div class="content-header col-6">
           <h1>Штамповка.рф - сложные штампы, простые решения</h1>
           <div class="txt">
@@ -28,11 +28,22 @@
             <div class="btn--item"><div class="btn--arrow"></div></div>
           </div>
         </div>
-        <img
-          class="img"
-          src="http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg"
-          alt=""
-        />
+        <div class="img--wrap">
+          <img class="img" :src="`${slides[currentSlide].src}`" alt="" />
+          <div class="wrap-btn-slider">
+            <div class="prev" @click="prevSlide()"></div>
+            <div class="pagination">
+              <div
+                class="dot"
+                v-for="(t, i) in slides"
+                :key="t"
+                @click="currentSlide = i"
+                :class="{ active: currentSlide === i }"
+              ></div>
+            </div>
+            <div class="next" @click="nextSlide()"></div>
+          </div>
+        </div>
       </div>
     </header>
   </div>
@@ -43,6 +54,35 @@ import { ref } from "vue";
 import modalForm from "./modalForm.vue";
 
 const modalActive = ref(false);
+const slides = [
+  {
+    src: "http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg",
+  },
+  {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFAEojFC8xuEvC1yBziVkL-AGORfiv4jUB1w&usqp=CAU",
+  },
+  {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdDj-_DU67I6TXe2CIx1uZS9493wUQr0-CA&usqp=CAU",
+  },
+  {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR08VQP1y07KKhql3vITCqncKSPsXn1OI038A&usqp=CAU",
+  },
+];
+const currentSlide = ref(0);
+const nextSlide = () => {
+  if (currentSlide.value === 3) {
+    currentSlide.value = 0;
+  } else {
+    currentSlide.value++;
+  }
+};
+const prevSlide = () => {
+  if (currentSlide.value === 0) {
+    currentSlide.value = 3;
+  } else {
+    currentSlide.value--;
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -51,15 +91,67 @@ const modalActive = ref(false);
   @include fluid("margin-top", 70);
   height: 100vh;
 }
+.img--wrap {
+  @include fluid("height", 600);
+  padding: 0;
+  position: relative;
+}
 .img {
-  box-shadow: var(--box-x) 100px 0 0 #b5cbd4;
+  box-shadow: var(--head-box-x) var(--head-box-y) 0 0 #b5cbd4;
   @include fluid("width", 600);
   @include fluid("height", 600);
 }
+.wrap-btn-slider {
+  position: absolute;
+  @include fluid("bottom", 20);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.pagination {
+  display: flex;
+  @include fluid("gap", 20);
+  align-items: center;
+}
+.dot {
+    @include fluid("width", 15);
+    @include fluid("height", 15);
+    background: #fff;
+    opacity: 0.5;
+    border-radius: 50%;
+    transition: 1s all ease;
+  }
+.active{
+  opacity: 1;
+}
+.prev,
+.next {
+  border: 0 #fff solid;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  @include fluid("border-top-width", 3);
+  @include fluid("border-left-width", 3);
+  @include fluid("width", 30);
+  @include fluid("height", 30);
+}
+.prev {
+  transform: rotate(-45deg);
+}
+.next {
+  transform: rotate(130deg);
+}
+
+.row-wrap {
+  justify-content: center;
+}
 
 .content-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #000;
   h1 {
+    @include fluid("width", 447);
     @include fluid("font-size", 50);
   }
   .txt {
@@ -80,7 +172,7 @@ const modalActive = ref(false);
 @media (max-width: 991px) {
   .content-header {
     h1 {
-      @include fluid("font-size", 70);
+      @include fluid("width", 700);
     }
     p {
       @include fluid("font-size", 26);
