@@ -156,14 +156,14 @@ const changePrevSlide = () => {
 .services--items {
   display: flex;
   justify-content: center;
-  @include fluid("height", 400);
+  @include fluid("height", 500);
   padding: 0;
   @include fluid("margin-top", 70);
 }
 .serv-desc {
   display: flex;
   @include fluid("gap", 40);
-  @include fluid("height", 400);
+  @include fluid("height", 500);
   @include fluid("padding", 40);
   justify-content: center;
   align-items: center;
@@ -174,11 +174,11 @@ const changePrevSlide = () => {
     font-weight: 700;
   }
   .serv--txt {
-    @include fluid("font-size", 12);
+    @include fluid("font-size", 16);
   }
 }
 .serv-img {
-  @include fluid("height", 400);
+  @include fluid("height", 500);
   padding: 0;
 }
 .current-services {

@@ -81,8 +81,8 @@
   flex-direction: column;
   align-items: center;
   @include fluid("gap", 20);
-  @include fluid("padding", 40);
-  @include fluid("padding-top", 60);
+  @include fluid("padding", 15);
+  @include fluid("padding-top", 20);
   @include fluid("height", 550);
   transition: 1s all ease;
 }
@@ -102,8 +102,8 @@
   align-items: center;
   border: solid;
   border-radius: 50%;
-  @include fluid("width", 100);
-  @include fluid("height", 100);
+  @include fluid("width", 80);
+  @include fluid("height", 80);
   @include fluid("font-size", 30);
   @include fluid("border-width", 2);
   transition: 0.4s all ease;
@@ -114,12 +114,12 @@
   font-weight: 700;
 }
 .card--txt {
-  @include fluid("font-size", 12);
+  @include fluid("font-size", 16);
 }
 .card:hover {
   .card--circle{
-    @include fluid("width", 80);
-  @include fluid("height", 80);
+    @include fluid("width", 50);
+  @include fluid("height", 50);
   }
 }
 </style>

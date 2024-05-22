@@ -59,13 +59,13 @@ const slides = [
     src: "http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg",
   },
   {
-    src: "http://localhost:5174/img/140394721_xl_normal_none.jpeg",
+    src: "https://domart.com/sites/default/files/inline-images/holodnaya_shtampovka.jpg",
   },
   {
-    src: "http://localhost:5174/img/60758243_xl_normal_none.jpeg",
+    src: "https://avatars.dzeninfra.ru/get-zen_doc/3753737/pub_63c51301431ef9119c890df5_63c51317ccc0933e4ca638c1/scale_1200",
   },
   {
-    src: "http://localhost:5174/img/123769407_xl_normal_none.jpeg",
+    src: "https://tdc-zavod.ru/img/catalog/c10.jpg",
   },
 ];
 const currentSlide = ref(0);
