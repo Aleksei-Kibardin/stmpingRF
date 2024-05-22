@@ -10,22 +10,23 @@
     <div class="row services--items">
       <transition-group name="bounce">
         <div class="prev-services serv-btn col-3" @click="changePrevSlide()">
-          <div class="next-slide">{{ slides[prevSlide].title }}</div>
+          <div class="next-slide" :class="{ 'anim-active': animActive }">
+            {{ slides[prevSlide].title }}
+          </div>
           <div class="arrow--prev arrow"></div>
         </div>
-        <div class="anim-block" :class="{ 'anim-active': animActive }"></div>
         <img class="serv-img col-3" src="../assets/A523Z8WBWHQ.jpg" alt="" />
         <div class="serv-desc col-3">
-          <div class="serv--title">
+          <div class="serv--title" :class="{ 'anim-active': animActive }">
             {{ slides[currentSlide].title }}
           </div>
-          <div class="serv--txt">
+          <div class="serv--txt" :class="{ 'anim-active': animActive }">
             {{ slides[currentSlide].txt }}
           </div>
         </div>
         <div class="next-services serv-btn col-3" @click="changeNextSlide()">
           <div class="arrow--next arrow"></div>
-          <div class="next-slide">
+          <div class="next-slide" :class="{ 'anim-active': animActive }">
             {{ slides[nextSlide].title }}
           </div>
         </div>
@@ -117,7 +118,7 @@ const changeNextSlide = () => {
     } else {
       currentSlide.value++;
       checkSlide();
-      console.log( prevSlide.value, currentSlide.value, nextSlide.value )
+      console.log(prevSlide.value, currentSlide.value, nextSlide.value);
     }
     checkSlide();
   }, 500);
@@ -132,26 +133,15 @@ const changePrevSlide = () => {
     } else {
       currentSlide.value--;
       checkSlide();
-      console.log( prevSlide.value, currentSlide.value, nextSlide.value )
+      console.log(prevSlide.value, currentSlide.value, nextSlide.value);
     }
-    
   }, 500);
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.anim-block{
-  @include fluid("height", 0);
-  @include fluid("width", 650);
-  position: absolute;
-  background-color: #b5cbd4;
-  padding: 0;
-  transition: 0.5s all ease
-}
-.anim-active{
-  @include fluid("height", 500);
-}
+
 .line {
   border: 1px #000 solid;
   @include fluid("width", 250);
@@ -193,10 +183,21 @@ const changePrevSlide = () => {
   .serv--title {
     @include fluid("font-size", 20);
     font-weight: 700;
+    opacity: 1;
+    transition: 0.5s all ease;
   }
   .serv--txt {
     @include fluid("font-size", 15);
+    opacity: 1;
+    transition: 0.5s all ease;
   }
+}
+.next-slide {
+  opacity: 1;
+  transition: 0.5s all ease;
+}
+.anim-active {
+  opacity: 0 !important;
 }
 .serv-img {
   @include fluid("height", 500);
