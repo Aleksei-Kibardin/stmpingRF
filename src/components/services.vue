@@ -8,25 +8,28 @@
       </div>
     </div>
     <div class="row services--items">
-      <div class="prev-services serv-btn col-3" @click="changePrevSlide()">
-        <div class="next-slide">{{ slides[prevSlide].title }}</div>
-        <div class="arrow--prev arrow"></div>
-      </div>
-      <img class="serv-img col-3" src="../assets/A523Z8WBWHQ.jpg" alt="" />
-      <div class="serv-desc col-3">
-        <div class="serv--title">
-          {{ slides[currentSlide].title }}
+      <transition-group name="bounce">
+        <div class="prev-services serv-btn col-3" @click="changePrevSlide()">
+          <div class="next-slide">{{ slides[prevSlide].title }}</div>
+          <div class="arrow--prev arrow"></div>
         </div>
-        <div class="serv--txt">
-          {{ slides[currentSlide].txt }}
+        <div class="anim-block" :class="{ 'anim-active': animActive }"></div>
+        <img class="serv-img col-3" src="../assets/A523Z8WBWHQ.jpg" alt="" />
+        <div class="serv-desc col-3">
+          <div class="serv--title">
+            {{ slides[currentSlide].title }}
+          </div>
+          <div class="serv--txt">
+            {{ slides[currentSlide].txt }}
+          </div>
         </div>
-      </div>
-      <div class="next-services serv-btn col-3" @click="changeNextSlide()">
-        <div class="arrow--next arrow"></div>
-        <div class="next-slide">
-          {{ slides[nextSlide].title }}
+        <div class="next-services serv-btn col-3" @click="changeNextSlide()">
+          <div class="arrow--next arrow"></div>
+          <div class="next-slide">
+            {{ slides[nextSlide].title }}
+          </div>
         </div>
-      </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -96,6 +99,7 @@ const checkSlide = () => {
     prevSlide.value = slides.length - 2;
   } else if (currentSlide.value === 0) {
     prevSlide.value = slides.length - 1;
+    nextSlide.value = 1;
   } else {
     prevSlide.value = currentSlide.value - 1;
     nextSlide.value = currentSlide.value + 1;
@@ -109,8 +113,11 @@ const changeNextSlide = () => {
     if (currentSlide.value === slides.length - 1) {
       currentSlide.value = 0;
       nextSlide.value = 1;
+      checkSlide();
     } else {
       currentSlide.value++;
+      checkSlide();
+      console.log( prevSlide.value, currentSlide.value, nextSlide.value )
     }
     checkSlide();
   }, 500);
@@ -121,16 +128,30 @@ const changePrevSlide = () => {
     animActive.value = false;
     if (currentSlide.value === 0) {
       currentSlide.value = slides.length - 1;
+      checkSlide();
     } else {
       currentSlide.value--;
+      checkSlide();
+      console.log( prevSlide.value, currentSlide.value, nextSlide.value )
     }
-    checkSlide();
+    
   }, 500);
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
+.anim-block{
+  @include fluid("height", 0);
+  @include fluid("width", 650);
+  position: absolute;
+  background-color: #b5cbd4;
+  padding: 0;
+  transition: 0.5s all ease
+}
+.anim-active{
+  @include fluid("height", 500);
+}
 .line {
   border: 1px #000 solid;
   @include fluid("width", 250);
@@ -174,7 +195,7 @@ const changePrevSlide = () => {
     font-weight: 700;
   }
   .serv--txt {
-    @include fluid("font-size", 16);
+    @include fluid("font-size", 15);
   }
 }
 .serv-img {

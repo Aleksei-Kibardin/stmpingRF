@@ -29,7 +29,10 @@
           </div>
         </div>
         <div class="img--wrap">
-          <img class="img" :src="`${slides[currentSlide].src}`" alt="" />
+          <div
+            class="img"
+            :style="{ backgroundImage: `url(${slides[currentSlide].src})` }"
+          ></div>
           <div class="wrap-btn-slider">
             <div class="prev" @click="prevSlide()"></div>
             <div class="pagination">
@@ -100,6 +103,9 @@ const prevSlide = () => {
   box-shadow: var(--head-box-x) var(--head-box-y) 0 0 #b5cbd4;
   @include fluid("width", 600);
   @include fluid("height", 600);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.5s all ease;
 }
 .wrap-btn-slider {
   position: absolute;
@@ -114,14 +120,14 @@ const prevSlide = () => {
   align-items: center;
 }
 .dot {
-    @include fluid("width", 15);
-    @include fluid("height", 15);
-    background: #fff;
-    opacity: 0.5;
-    border-radius: 50%;
-    transition: 1s all ease;
-  }
-.active{
+  @include fluid("width", 15);
+  @include fluid("height", 15);
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 50%;
+  transition: 1s all ease;
+}
+.active {
   opacity: 1;
 }
 .prev,
