@@ -59,13 +59,13 @@ const slides = [
     src: "http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg",
   },
   {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFAEojFC8xuEvC1yBziVkL-AGORfiv4jUB1w&usqp=CAU",
+    src: "http://localhost:5174/img/140394721_xl_normal_none.jpeg",
   },
   {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdDj-_DU67I6TXe2CIx1uZS9493wUQr0-CA&usqp=CAU",
+    src: "http://localhost:5174/img/60758243_xl_normal_none.jpeg",
   },
   {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR08VQP1y07KKhql3vITCqncKSPsXn1OI038A&usqp=CAU",
+    src: "http://localhost:5174/img/123769407_xl_normal_none.jpeg",
   },
 ];
 const currentSlide = ref(0);
