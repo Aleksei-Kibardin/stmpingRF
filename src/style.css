@@ -36,6 +36,7 @@ button, input, label {
 }
 h1, h2,
 h3, h4 {
+  font-family: 'Arsenal' !important;
   text-wrap: balance;
 }
 a:not([class]) {

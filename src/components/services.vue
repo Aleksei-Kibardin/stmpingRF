@@ -181,8 +181,9 @@ const changePrevSlide = () => {
   flex-direction: column;
   background: #dceaf0;
   .serv--title {
-    @include fluid("font-size", 20);
-    font-weight: 700;
+    font-family: 'Arsenal' !important;
+    @include fluid("font-size", 25);
+    font-weight: 900;
     opacity: 1;
     transition: 0.5s all ease;
   }
@@ -193,6 +194,7 @@ const changePrevSlide = () => {
   }
 }
 .next-slide {
+  font-family: 'Arsenal' !important;
   opacity: 1;
   transition: 0.5s all ease;
 }

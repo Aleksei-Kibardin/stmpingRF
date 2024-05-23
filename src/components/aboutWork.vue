@@ -109,6 +109,7 @@
   transition: 0.4s all ease;
 }
 .card--title {
+  font-family: 'Arsenal' !important;
   align-self: flex-start;
   @include fluid("font-size", 25);
   font-weight: 700;
