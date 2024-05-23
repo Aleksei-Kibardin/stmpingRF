@@ -119,8 +119,8 @@
 }
 .card:hover {
   .card--circle{
-    @include fluid("width", 50);
-  @include fluid("height", 50);
+    @include fluid("width", 65);
+  @include fluid("height", 65);
   }
 }
 </style>
