@@ -41,15 +41,12 @@
       </div>
       <div class="nav-contact--btn col-3">
         <span> +7-901-971-46-64</span>
-        <div class="btn" @click="modalActive = !modalActive">
-          ЗАКАЗАТЬ ЗВОНОК
-        </div>
+        <modal-form :btnTxt="'ЗАКАЗАТЬ ЗВОНОК'"></modal-form>
       </div>
     </div>
   </nav>
   <header-vue></header-vue>
   <main @click="isActive = false">
-    <modal-form :modalActive="modalActive"></modal-form>
     <about-activiti></about-activiti>
     <services-vue></services-vue>
     <gallery-vue></gallery-vue>
@@ -150,22 +147,7 @@ nav {
     @include fluid("font-size", 16);
   }
 }
-.btn {
-  background: #cb9a74 ;
-  color: #fff;
-  font-weight: 700;
-  cursor: pointer;
-  width: auto;
-  text-align: center;
-  @include fluid("width", 180);
-  @include fluid("padding", 10);
-  @include fluid("font-size", 16);
-  border-radius: 0;
-  transition: 1s all ease;
-}
-.btn:hover {
-  background: #ff9747;
-}
+
 .menu-btn.active::before {
   position: relative;
   transform: rotate(45deg);

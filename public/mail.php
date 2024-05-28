@@ -4,11 +4,12 @@ require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
+$data = json_decode(file_get_contents("php://input"), true);
+
 $name = $data['name'];
 $phone = $data['number'];
 $email = $data['email'];
 $message = $data['question'];
-
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -20,7 +21,7 @@ $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, 
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
 $mail->setFrom('kibardin2000@mail.ru'); // от кого будет уходить письмо?
-$mail->addAddress('kibardin20000@gmail.com');// Кому будет уходить письмо 
+$mail->addAddress('kibardin20000@gmail.com');     // Кому будет уходить письмо 
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
@@ -30,7 +31,7 @@ $mail->addAddress('kibardin20000@gmail.com');// Кому будет уходит
 $mail->isHTML(true);                   
 
 $mail->Subject = 'Заявка с тестового сайта';
-$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$email;
+$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$email. '<br>Сообщение:' .$message;
 $mail->AltBody = '';
 
 if($mail->send()) {

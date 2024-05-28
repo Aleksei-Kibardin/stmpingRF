@@ -1,5 +1,4 @@
 <template>
-  <modal-form :modalActive="modalActive"></modal-form>
   <footer id="section6" class="row">
     <div class="container">
       <h1>Контакты</h1>
@@ -24,7 +23,7 @@
           <div class="email contacts--item">
             <span>Электронная почта:</span> spb9714664@yandex.ru
           </div>
-          <div class="btn" @click="modalActive = !modalActive">Связаться</div>
+          <modal-form :btnTxt="'Связаться'"></modal-form>
         </div>
       </div>
     </div>

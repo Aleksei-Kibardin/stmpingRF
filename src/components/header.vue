@@ -1,6 +1,5 @@
 <template>
   <div id="section1" class="head--container">
-    <modal-form :modalActive="modalActive"></modal-form>
     <header class="container">
       <div class="row row-wrap">
         <div class="content-header col-6">
@@ -21,11 +20,8 @@
               металлообработки<br />
             </p>
           </div>
-          <div class="btn--wrap" @click="modalActive = !modalActive">
-            <div class="btn">
-              <span>Обсудить проект</span>
-            </div>
-            <div class="btn--item"><div class="btn--arrow"></div></div>
+          <div class="modal-btn">
+            <modal-form :btnTxt="'Обсудить проект'"></modal-form>
           </div>
         </div>
         <div class="img--wrap">
@@ -90,6 +86,9 @@ const prevSlide = () => {
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
+.modal-btn{
+  @include fluid("margin-top", 50);
+}
 .head--container {
   @include fluid("margin-top", 70);
   height: 100vh;
@@ -184,22 +183,5 @@ const prevSlide = () => {
       @include fluid("font-size", 26);
     }
   }
-}
-.btn {
-  background: #cb9a74;
-  color: #fff;
-  font-weight: 700;
-  cursor: pointer;
-  width: auto;
-  text-align: center;
-  @include fluid("margin-top", 50);
-  @include fluid("width", 230);
-  @include fluid("padding", 10);
-  @include fluid("font-size", 20);
-  border-radius: 0;
-  transition: 1s all ease;
-}
-.btn:hover {
-  background: #ff9747;
 }
 </style>

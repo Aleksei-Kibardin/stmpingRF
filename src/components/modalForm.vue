@@ -1,4 +1,5 @@
 <template>
+  <div class="btn" @click="openModal()">{{props.btnTxt}}</div>
   <div class="backdrop" @click="closeModal" v-if="active === true"></div>
   <div class="modal-window" v-if="active === true">
     <form
@@ -18,8 +19,8 @@
           <input v-model="formData.name" type="text" name="name" required />
         </div>
         <div>
-          <label>Почта <span></span></label>
-          <input v-model="formData.email" type="email" name="email" />
+          <label>Почта <span>*</span></label>
+          <input v-model="formData.email" type="text" name="email" required />
         </div>
         <div>
           <label>Номер телефона (с кодом) <span>*</span></label>
@@ -27,22 +28,9 @@
         </div>
         <div>
           <label>Сообщение</label>
-          <input
-            id="tel"
-            v-model="formData.question"
-            type="text"
-            name="question"
-          />
+          <input v-model="formData.question" type="text" name="question" />
         </div>
-        <button
-          @click="post()"
-          :disabled="valid"
-          :class="{ 'submit-anim': valid !== true }"
-          class="bot-send-mail"
-          type="submit"
-        >
-          Послать заявку
-        </button>
+        <button @click="post()" class="bot-send-mail" type="submit">Послать заявку</button>
       </div>
     </form>
     <div v-else>
@@ -53,14 +41,13 @@
 
 <script setup>
 import { ref, reactive, watch } from "vue";
-import { submitForm } from "../services/form";
+import { submitForm } from "../services/form.js";
 
 const props = defineProps({
-  modalActive: Boolean,
+  btnTxt: String,
 });
 
-const active = ref(props.modalActive);
-const valid = ref(true);
+const active = ref(false);
 const formSubmitted = ref(false);
 const message = ref("");
 const formData = reactive({
@@ -70,13 +57,15 @@ const formData = reactive({
   question: "",
 });
 
-watch(() => props.modalActive, () => {
-    active.value = true;
-});
-
 watch(formData, () => {
   formData.number = formData.number.replace(/[^\d+()]/g, "");
 });
+
+const openModal = () => {
+  active.value = true;
+  document.body.classList.add("modal-open");
+};
+
 const closeModal = (event) => {
   event.stopPropagation();
   document.body.classList.remove("modal-open");
@@ -86,10 +75,27 @@ const closeModal = (event) => {
 const post = async () => {
   await submitForm(formData, formSubmitted, message);
 };
+
 </script>
 
 <style lang="scss">
 @import "../fluid.sass";
+.btn {
+  background: #cb9a74;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+  @include fluid("width", 200);
+  @include fluid("padding", 10);
+  @include fluid("font-size", 18);
+  border-radius: 0;
+  transition: 1s all ease;
+}
+.btn:hover {
+  background: #ff9747;
+}
 
 .backdrop {
   position: fixed;
@@ -159,13 +165,14 @@ const post = async () => {
   background: none;
   border: none;
   text-transform: uppercase;
+  
   font-weight: 700;
-  background-color: #0080a7;
-  color: #fff;
+  background-color: #f89537;
   cursor: pointer;
-  transition: 0.4s all ease;
+  border: 3px #ffd50034 solid;
+  
 }
-.submit-anim:hover {
+.form-zvonok .bot-send-mail:hover {
   color: #009b97;
   background-color: #fff;
 }
@@ -192,11 +199,5 @@ const post = async () => {
     padding: 10px;
     margin-top: 10px;
   }
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 </style>
