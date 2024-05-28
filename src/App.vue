@@ -31,17 +31,13 @@
           <div class="ancor-line"></div>
         </div>
         <div class="ancor" @click="scrollToAnchor('#section5')">
-          Этапы работы
-          <div class="ancor-line"></div>
-        </div>
-        <div class="ancor" @click="scrollToAnchor('#section6')">
           Контакты
           <div class="ancor-line"></div>
         </div>
       </div>
       <div class="nav-contact--btn col-3">
         <span> +7-901-971-46-64</span>
-        <modal-form :btnTxt="'ЗАКАЗАТЬ ЗВОНОК'"></modal-form>
+        <span> spb9714664@yandex.ru</span>
       </div>
     </div>
   </nav>
@@ -50,7 +46,6 @@
     <about-activiti></about-activiti>
     <services-vue></services-vue>
     <gallery-vue></gallery-vue>
-    <about-Work></about-Work>
   </main>
   <footerVue></footerVue>
 </template>
@@ -63,7 +58,6 @@ import servicesVue from "./components/services.vue";
 import footerVue from "./components/footer.vue";
 import modalForm from "./components/modalForm.vue";
 import { ref } from "vue";
-import aboutWork from "./components/aboutWork.vue";
 
 const isActive = ref(false);
 
@@ -107,7 +101,7 @@ body::-webkit-scrollbar-thumb {
 }
 nav {
   @include fluid("height", 100);
-  @include fluid("font-size", 14);
+  @include fluid("font-size", 16);
   position: fixed;
   background-color: #fff;
   width: 100%;
@@ -141,10 +135,11 @@ nav {
 .nav-contact--btn {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  text-align: right;
   cursor: pointer;
   span{
-    @include fluid("font-size", 16);
+    @include fluid("font-size", 18);
   }
 }
 
@@ -294,6 +289,6 @@ nav {
   @include fluid("top", -97);
 }
 .mt-100{
-  height: 100px;
+  @include fluid("height", 100);
 }
 </style>

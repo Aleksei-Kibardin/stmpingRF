@@ -3,21 +3,12 @@
     <header class="container">
       <div class="row row-wrap">
         <div class="content-header col-6">
-          <h1>Штамповка.рф - сложные штампы, простые решения</h1>
           <div class="txt">
-            <hr />
             <p>
-              Добро пожаловать на страницу производственной компании
-              ШТАМПОВКА.РФ! <br />
-              Наше предприятие выполняет все виды объёмной холодной штамповки
-              чёрных и цветных металлов на современных металлообрабатывающих
-              комплексов с ЧПУ.<br />
-              Мы производим серийные и мелкосерийные партии изделий по образцам
-              и чертежам заказчиков.<br />
-              Выполняем все виды смежных работ от разработки технической
-              документации на изделия до их брендирования и индивидуальной
-              упаковки. Оказываем помощь в приобретении оборудования для
-              металлообработки<br />
+              <span>КРУПНОСЕРИЙНАЯ ШТАМПОВКА МЕТАЛЛИЧЕСКИХ ИЗДЕЛИЙ</span><br />
+              ЛИСТОВАЯ АВТОМАТИЧЕСКАЯ И ОБЪЁМНАЯ РУЧНАЯ ШТАМПОВКА. ИНЖИНИРИНГ.
+              ИМПОРТОЗАМЕЩЕНИЕ. СКВОЗНОЙ КОНТРОЛЬ КАЛИБРАМИ И ИЗМЕРИТЕЛЬНЫМ
+              ИНСТРУМЕНТОМ
             </p>
           </div>
           <div class="modal-btn">
@@ -86,7 +77,7 @@ const prevSlide = () => {
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.modal-btn{
+.modal-btn {
   @include fluid("margin-top", 50);
 }
 .head--container {
@@ -154,18 +145,20 @@ const prevSlide = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   color: #000;
-  h1 {
-    @include fluid("width", 447);
-    @include fluid("font-size", 50);
-  }
   .txt {
     @include fluid("margin-top", 30);
-    width: 70%;
+    text-align: center;
+    width: 100%;
+  }
+  span {
+    @include fluid("font-size", 40);
+    font-weight: 900;
   }
   p {
     @include fluid("margin-top", 20);
-    @include fluid("font-size", 18);
+    @include fluid("font-size", 24);
   }
 }
 .container {

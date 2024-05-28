@@ -1,23 +1,21 @@
 <template>
   <div id="section3" class="mt-100"></div>
-  <div class="wrap--title-gallery">
-    <h1 class="title-gallery">Примеры продукции <hr></h1>
-  </div>
-
-  <div class="slider">
-    <swiper
-      :modules="modules"
-      :slides-per-view="7"
-      :space-around="50"
-      :watchSlidesProgress="true"
-      navigation
-      :pagination="{ dynamicBullets: true }"
-      :loop="true"
-    >
-      <swiper-slide class="swiper__img" v-for="index in 17" :key="index"
-        ><img class="img" :src="`/img/${index}.jpeg`" alt=""
-      /></swiper-slide>
-    </swiper>
+  <div class="container">
+    <div class="wrap--gallery">
+      <h1 class="title-gallery">
+        Примеры продукции
+        <hr />
+      </h1>
+      <div class="row">
+      <img
+        class="img col-3"
+        v-for="index in 17"
+        :key="index"
+        :src="`/img/${index}.jpeg`"
+        alt=""
+      />
+    </div>
+    </div>
   </div>
 </template>
 
@@ -35,21 +33,17 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.slider {
-  @include fluid("margin-top", 100);
-  user-select: none;
+.img{
+  padding: 40px;
+  transition: 0.5s all ease;
 }
-.swiper__img {
+.img:hover{
+  padding: 20px;
+}
+.wrap--gallery {
   display: flex;
-  align-self: center;
-  border-top: 1px #000 solid;
-}
-.wrap-btn-slider {
-  position: relative;
-}
-.wrap--title-gallery {
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   @include fluid("margin-top", 200);
 }
 .title-gallery {

@@ -4,7 +4,6 @@
   <div class="modal-window" v-if="active === true">
     <form
       class="obratnuj-zvonok"
-      @submit.prevent="submitForm"
       v-if="!formSubmitted"
     >
       <div class="modal-title">
@@ -78,7 +77,7 @@ const post = async () => {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../fluid.sass";
 .btn {
   background: #cb9a74;
@@ -119,6 +118,7 @@ const post = async () => {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #eeeeee;
+  color: #000;
   padding: 30px;
   z-index: 999;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);

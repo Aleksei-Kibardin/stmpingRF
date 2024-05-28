@@ -8,6 +8,9 @@
       </div>
     </div>
     <div class="row services--items">
+      <services-list></services-list>
+    </div>
+    <!-- <div class="row services--items">
       <transition-group name="bounce">
         <div class="prev-services serv-btn col-3" @click="changePrevSlide()">
           <div class="next-slide" :class="{ 'anim-active': animActive }">
@@ -31,112 +34,122 @@
           </div>
         </div>
       </transition-group>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import servicesList from './servicesList.vue'
+// import { reactive, ref } from "vue";
 
-const slides = [
-  {
-    id: 0,
-    title: "Автоматическая холодная листовая штамповка",
-    txt: "Строительные крепления, монтажные кляймеры, клипсы, электрические зажимы и контакты, нестандартные и стандартные шайбы, уголки, колпачки, держатели, прижимы и прочее прочее. Наша основная работа. Автоматической штамповкой изготавливаются детали крупных партий. Этот метод обработки металлов дешевле, быстрее и удобнее иных видов обработки металлов.",
-  },
-  {
-    id: 1,
-    title: "Нанесение защитных покрытий",
-    txt: "Наши услуги по нанесению защитных покрытий обеспечивают долговечность и надежность вашей продукции, защищая её от повреждений и обеспечивая сохранность в эксплуатации.",
-  },
-  {
-    id: 2,
-    title: "Проектирование штампов и деталей",
-    txt: "Наши услуги в этой области включают в себя создание оптимальных и эффективных конструкций, учитывая требования заказчика к функциональности, прочности и экономичности производства.",
-  },
-  {
-    id: 3,
-    title: "Фасовка",
-    txt: "Мы гарантируем точное соблюдение всех стандартов качества и безопасности, обеспечивая надежную защиту вашей продукции во время транспортировки и хранения.",
-  },
-  {
-    id: 4,
-    title: "Проектирование Автоматизированных Линий Штамповки",
-    txt: "Мы предлагаем инновационные решения по созданию и изготовлению автоматизированных линий штамповки, обеспечивая высокую эффективность и надежность в производстве деталей.",
-  },
-  {
-    id: 5,
-    title: "Производство Штампов для Холодной Листовой Штамповки",
-    txt: "Мы производим высококачественные штампы, для холодной листовой штамповки. Наши штампы обеспечивают точность и эффективность производства деталей в различных отраслях промышленности.",
-  },
-  {
-    id: 6,
-    title: "Прототипирование и реверс-инжиниринг",
-    txt: "Предоставляем предварительные прототипы с использованием различных технологий внутри завода. Мы создаем прототипы, используя лазерную резку, механическую обработку или штамповку деталей в соответствии с вашими потребностями.",
-  },
-  {
-    id: 7,
-    title: "Ручная холодная листовая штамповка",
-    txt: "Для небольших партий продукции рекомендуется ручная штамповка. Листовая холодная штамповка применяется для операций глубокой и обычной вытяжки, производства деталей с петлями, резьбой, отбортовкой. Для изготовления также могут применяться и другие операции, которые требуют ручного труда оператора и строгого визуального контроля. ",
-  },
-  {
-    id: 8,
-    title: "Серийная сварка изделий из черных и цветных металлов",
-    txt: "Для серийного выпуска металлических опор, закладных, уголков, сварных фланцев, деталей основания используются автоматизированные посты ручной и автоматизированной сварки. Такие изделия отличаются высокой геометрической стабильностью, постоянным качеством стыков и швов. Для выпуска используется серийная сварка, что сокращает время на выпуск продукции с сохранением качества. ",
-  },
-];
+// const slides = [
+//   {
+//     id: 0,
+//     url: "1",
+//     title: "Автоматическая холодная листовая штамповка",
+//     description: "Строительные крепления, монтажные кляймеры, клипсы, электрические зажимы и контакты, нестандартные и стандартные шайбы, уголки, колпачки, держатели, прижимы и прочее прочее. Наша основная работа. Автоматической штамповкой изготавливаются детали крупных партий. Этот метод обработки металлов дешевле, быстрее и удобнее иных видов обработки металлов.",
+//   },
+//   {
+//     id: 1,
+//     url: "2",
+//     title: "Нанесение защитных покрытий",
+//     description: "Наши услуги по нанесению защитных покрытий обеспечивают долговечность и надежность вашей продукции, защищая её от повреждений и обеспечивая сохранность в эксплуатации.",
+//   },
+//   {
+//     id: 2,
+//     url: "2",
+//     title: "Проектирование штампов и деталей",
+//     description: "Наши услуги в этой области включают в себя создание оптимальных и эффективных конструкций, учитывая требования заказчика к функциональности, прочности и экономичности производства.",
+//   },
+//   {
+//     id: 3,
+//     url: "3",
+//     title: "Фасовка",
+//     description: "Мы гарантируем точное соблюдение всех стандартов качества и безопасности, обеспечивая надежную защиту вашей продукции во время транспортировки и хранения.",
+//   },
+//   {
+//     id: 4,
+//     url: "4",
+//     title: "Проектирование Автоматизированных Линий Штамповки",
+//     description: "Мы предлагаем инновационные решения по созданию и изготовлению автоматизированных линий штамповки, обеспечивая высокую эффективность и надежность в производстве деталей.",
+//   },
+//   {
+//     id: 5,
+//     url: "5",
+//     title: "Производство Штампов для Холодной Листовой Штамповки",
+//     description: "Мы производим высококачественные штампы, для холодной листовой штамповки. Наши штампы обеспечивают точность и эффективность производства деталей в различных отраслях промышленности.",
+//   },
+//   {
+//     id: 6,
+//     url: "6",
+//     title: "Прототипирование и реверс-инжиниринг",
+//     description: "Предоставляем предварительные прототипы с использованием различных технологий внутри завода. Мы создаем прототипы, используя лазерную резку, механическую обработку или штамповку деталей в соответствии с вашими потребностями.",
+//   },
+//   {
+//     id: 7,
+//     url: "7",
+//     title: "Ручная холодная листовая штамповка",
+//     description: "Для небольших партий продукции рекомендуется ручная штамповка. Листовая холодная штамповка применяется для операций глубокой и обычной вытяжки, производства деталей с петлями, резьбой, отбортовкой. Для изготовления также могут применяться и другие операции, которые требуют ручного труда оператора и строгого визуального контроля. ",
+//   },
+//   {
+//     id: 8,
+//     url: "8",
+//     title: "Серийная сварка изделий из черных и цветных металлов",
+//     description: "Для серийного выпуска металлических опор, закладных, уголков, сварных фланцев, деталей основания используются автоматизированные посты ручной и автоматизированной сварки. Такие изделия отличаются высокой геометрической стабильностью, постоянным качеством стыков и швов. Для выпуска используется серийная сварка, что сокращает время на выпуск продукции с сохранением качества. ",
+//   },
+// ];
 
-const currentSlide = ref(0);
+// const currentSlide = ref(0);
 
-const prevSlide = ref(8);
+// const prevSlide = ref(8);
 
-const nextSlide = ref(1);
+// const nextSlide = ref(1);
 
-const animActive = ref(false);
+// const animActive = ref(false);
 
-const checkSlide = () => {
-  if (currentSlide.value === slides.length - 1) {
-    nextSlide.value = 0;
-    prevSlide.value = slides.length - 2;
-  } else if (currentSlide.value === 0) {
-    prevSlide.value = slides.length - 1;
-    nextSlide.value = 1;
-  } else {
-    prevSlide.value = currentSlide.value - 1;
-    nextSlide.value = currentSlide.value + 1;
-  }
-};
+// const checkSlide = () => {
+//   if (currentSlide.value === slides.length - 1) {
+//     nextSlide.value = 0;
+//     prevSlide.value = slides.length - 2;
+//   } else if (currentSlide.value === 0) {
+//     prevSlide.value = slides.length - 1;
+//     nextSlide.value = 1;
+//   } else {
+//     prevSlide.value = currentSlide.value - 1;
+//     nextSlide.value = currentSlide.value + 1;
+//   }
+// };
 
-const changeNextSlide = () => {
-  animActive.value = true;
-  setTimeout(() => {
-    animActive.value = false;
-    if (currentSlide.value === slides.length - 1) {
-      currentSlide.value = 0;
-      nextSlide.value = 1;
-      checkSlide();
-    } else {
-      currentSlide.value++;
-      checkSlide();
-      console.log(prevSlide.value, currentSlide.value, nextSlide.value);
-    }
-    checkSlide();
-  }, 500);
-};
-const changePrevSlide = () => {
-  animActive.value = true;
-  setTimeout(() => {
-    animActive.value = false;
-    if (currentSlide.value === 0) {
-      currentSlide.value = slides.length - 1;
-      checkSlide();
-    } else {
-      currentSlide.value--;
-      checkSlide();
-      console.log(prevSlide.value, currentSlide.value, nextSlide.value);
-    }
-  }, 500);
-};
+// const changeNextSlide = () => {
+//   animActive.value = true;
+//   setTimeout(() => {
+//     animActive.value = false;
+//     if (currentSlide.value === slides.length - 1) {
+//       currentSlide.value = 0;
+//       nextSlide.value = 1;
+//       checkSlide();
+//     } else {
+//       currentSlide.value++;
+//       checkSlide();
+//       console.log(prevSlide.value, currentSlide.value, nextSlide.value);
+//     }
+//     checkSlide();
+//   }, 500);
+// };
+// const changePrevSlide = () => {
+//   animActive.value = true;
+//   setTimeout(() => {
+//     animActive.value = false;
+//     if (currentSlide.value === 0) {
+//       currentSlide.value = slides.length - 1;
+//       checkSlide();
+//     } else {
+//       currentSlide.value--;
+//       checkSlide();
+//       console.log(prevSlide.value, currentSlide.value, nextSlide.value);
+//     }
+//   }, 500);
+// };
 </script>
 
 <style lang="scss" scoped>
@@ -166,10 +179,27 @@ const changePrevSlide = () => {
 }
 .services--items {
   display: flex;
-  justify-content: center;
-  @include fluid("height", 500);
+  justify-content: left;
   padding: 0;
   @include fluid("margin-top", 70);
+}
+.services--item {
+  padding: 0;
+  margin-top: 50px;
+  display: flex;
+  border-bottom: 4px #b5cbd4 solid;
+  height: 100px;
+  .service-name {
+    vertical-align: bottom;
+    font-weight: 700;
+    width: 350px;
+    height: 100%;
+    border-right: 4px #b5cbd4 solid;
+  }
+  .service-desc {
+    width: 70%;
+    margin-left: 20px;
+  }
 }
 .serv-desc {
   display: flex;
@@ -181,7 +211,7 @@ const changePrevSlide = () => {
   flex-direction: column;
   background: #dceaf0;
   .serv--title {
-    font-family: 'Arsenal' !important;
+    font-family: "Arsenal" !important;
     @include fluid("font-size", 25);
     font-weight: 900;
     opacity: 1;
@@ -194,7 +224,7 @@ const changePrevSlide = () => {
   }
 }
 .next-slide {
-  font-family: 'Arsenal' !important;
+  font-family: "Arsenal" !important;
   opacity: 1;
   transition: 0.5s all ease;
 }

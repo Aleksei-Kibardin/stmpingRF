@@ -4,32 +4,80 @@
     <div class="row wrap-content--activiti">
       <img class="img col-6" src="../assets/rIhFX-UENas.jpg" alt="" />
       <div class="title--activiti col-6">
-        <h1>
-          О нас
-          <hr />
-        </h1>
-        <h2>Предприятие штамповка РФ это:</h2>
+        <h2>Предприятие штамповка.РФ это:</h2>
         <p>
-          современное динамично развивающееся предприятие, которое неотрывно
-          держит руку на пульсе научно-технического прогресса.  Мы используем в
-          своей работе:
+          обособленное подразделение Соржинского инструментального завода
+          (ссылка на sorzha.ru) специализирующееся на автоматической листовой и
+          ручной объёмной штамповке
         </p>
         <ul>
-          <li>Новейшее металлообрабатывающее оборудование с числовым программным управлением, в том числе прецизионный комплекс объёмной штамповки</li>
-          <li>Лицензионное программное обеспечение производственного контроля, управления проектами, 3D-моделирования</li>
-          <li>Современные средства проверки качества изделий</li>
-          <li>Гибкую ценовую политику — отпускная цена изделий зависит от размера партии, сложности обработки, стажа сотрудничества с клиентом и других параметров</li>
-          <li>Новейшие методики логистики и управления ресурсами предприятия.</li>
+          <li>
+            <span class="t">
+              <img
+                src="https://cdn-icons-png.freepik.com/512/8486/8486609.png?ga=GA1.1.504983204.1715074229"
+                alt=""
+              />Объём:</span
+            >
+            крупносерийное производство металлических изделий
+          </li>
+          <li>
+            <span class="t">
+              <img
+                src="https://cdn-icons-png.freepik.com/512/12225/12225137.png?ga=GA1.1.504983204.1715074229"
+                alt=""
+              />Гибкость:</span
+            >
+            производство изделий малыми и средними партиями
+          </li>
+          <li>
+            <span class="t">
+              <img
+                src="https://cdn-icons-png.freepik.com/512/13665/13665693.png?ga=GA1.1.504983204.1715074229"
+                alt=""
+              />
+              Исследования:</span
+            >
+            опытное производство изделий, проектирование, прототипирование,
+            инжиниринг
+          </li>
+          <li>
+            <span class="t">
+              <img
+                src="https://cdn-icons-png.freepik.com/512/4258/4258545.png?ga=GA1.1.504983204.1715074229"
+                alt=""
+              />Технологии:</span
+            >
+            компонентное производство - мехобработка изделий, закалка объёмная и
+            индукционная, гальваника
+          </li>
+          <li><p>
+            <span class="t">
+              <img
+                src="https://cdn-icons-png.freepik.com/512/15570/15570022.png?ga=GA1.1.504983204.1715074229"
+                alt=""
+              />Контроль качества:</span
+            >
+              сквозной контроль контролируемых размеров калибрами и измерительным
+            инструментом. Документирование. Опытные и контрольные образцы..
+            </p>
+            
+          </li>
         </ul>
-        <p>  
-          3Офис и производство компании ШТАМПОВКА.РФ находятся в
-          Санкт-Петербурге и мы отгружаем заказысо всей России, а также из стран
-          ближнего зарубежья. Наша команда — сплочённый дружный коллектив, где
-          каждый на своём месте.
-          <br /><br />
-          Мы готовы к решению задач любой сложности, в чём нам в равной мере
-          помогают новейшие технологии и опыт наших мастеров.
-        </p>
+        <div class="midle-contacts">
+          <div class="midle-contacts--title">
+            <span>С чего начать?</span>
+          </div>
+          <div class="midle-contacts--txt">
+            <p>
+              Хотите обсудить проект? Есть удобные способы связаться с нами:
+            </p>
+            <p>Позвоните: <span>+7(901)9714664</span></p>
+            <p>Письмо в свободной форме: <span>spb9714664@yandex.ru</span></p>
+          </div>
+        </div>
+        <div class="contact-btn">
+          <modal-form :btnTxt="'Обсудить проект'"></modal-form>
+        </div>
       </div>
     </div>
   </div>
@@ -37,6 +85,7 @@
 
 <script setup>
 import { ref } from "vue";
+import modalForm from "./modalForm.vue";
 
 const currentCard = ref({
   title: "Космическая отрасль",
@@ -79,6 +128,35 @@ const cards = [
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
+.midle-contacts {
+  @include fluid("margin-top", 50);
+  display: flex;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  .midle-contacts--title {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    width: 35%;
+    height: 100%;
+    border-right: #b5cbd4 solid;
+    @include fluid("border-right-width", 5);
+    span {
+      font-weight: 900;
+    }
+  }
+  .midle-contacts--txt {
+    margin-left: 20px;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+.contact-btn {
+  @include fluid("margin-top", 20);
+  align-self: center;
+}
 .wrap-content--activiti {
   justify-content: center;
   @include fluid("gap", 100);
@@ -88,17 +166,28 @@ const cards = [
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  @include fluid("height", 200);
-  @include fluid("font-size", 16);
-  @include fluid("margin-top", 170);
-  h1 {
-    @include fluid("font-size", 40);
-  }
+  @include fluid("gap", 10);
+  @include fluid("font-size", 20);
   h2 {
     @include fluid("font-size", 30);
   }
   p {
-    @include fluid("font-size", 20);
+    @include fluid("font-size", 16);
+  }
+  li {
+    list-style-type: none;
+    @include fluid("margin-top", 20);
+    @include fluid("font-size", 18);
+  }
+  .t {
+    display: flex;
+    width: 50%;
+    gap: 5px;
+    font-weight: 700;
+  }
+  img {
+    height: 30px;
+    width: 30px;
   }
 }
 .img {
