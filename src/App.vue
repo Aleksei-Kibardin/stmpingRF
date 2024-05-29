@@ -1,11 +1,11 @@
 <template>
   <nav>
     <div class="container col-12 wrap-nav">
-      <img
-        class="logo col-2"
-        src="https://static.tildacdn.com/tild3936-3536-4362-b232-613362633237/__.png"
-        alt="логотип"
-      />
+      <div class="logo">
+        <img class="" src="/logo.svg" alt="логотип" />
+        Штамповка.рф
+      </div>
+
       <div
         class="menu-btn"
         :class="{ active: isActive }"
@@ -66,7 +66,7 @@ import headerVue from "./components/header.vue";
 import servicesVue from "./components/services.vue";
 import footerVue from "./components/footer.vue";
 import modalForm from "./components/modalForm.vue";
-import aboutWork from "./components/aboutWork.vue"
+import aboutWork from "./components/aboutWork.vue";
 import { ref } from "vue";
 
 const isActive = ref(false);
@@ -86,13 +86,22 @@ const scrollToAnchor = (anchor) => {
 
 <style lang="scss">
 @import "./fluid.sass";
-:root{
+:root {
   @include fluid("--head-box-x", 230);
   @include fluid("--head-box-y", 100);
   @include fluid("--midle-box-x", -350);
   @include fluid("--midle-box-y", -100);
   @include fluid("--last-box-x", -250);
   @include fluid("--last-box-y", -100);
+}
+.logo {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  img{
+    width: 45px;
+  }
 }
 .container {
   @include fluid("max-width", 1400);
@@ -150,7 +159,7 @@ nav {
   flex-direction: column;
   text-align: right;
   cursor: pointer;
-  span{
+  span {
     @include fluid("font-size", 18);
   }
 }
@@ -294,13 +303,16 @@ nav {
 .swiper-button-prev:after {
   @include fluid("left", -9);
 }
-.swiper-wrapper{
+.swiper-wrapper {
   @include fluid("gap", 100);
 }
-.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
   @include fluid("top", -97);
 }
-.mt-100{
+.mt-100 {
   @include fluid("height", 100);
 }
 </style>

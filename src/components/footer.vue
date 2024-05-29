@@ -33,11 +33,9 @@
     <div class="container footer">
       <div class="footer-row">
         <div class="logo">
-          <img
-            src="https://static.tildacdn.com/tild3936-3536-4362-b232-613362633237/__.png"
-            alt=""
-          />
-        </div>
+        <img class="" src="/logo.svg" alt="логотип" />
+        Штамповка.рф
+      </div>
         <div class="nav-ancors">
           <div class="nav-ancor" @click="scrollToAnchor('#section1')">
             Главная

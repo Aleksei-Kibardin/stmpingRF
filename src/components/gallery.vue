@@ -1,19 +1,20 @@
 <template>
   <div class="container">
     <div class="wrap--gallery">
-      <h1 class="title-gallery">
-        Примеры продукции
-        <hr />
-      </h1>
+      <div class="title-gallery">
+        <h1>Примеры продукции</h1>
+        <div class="line"></div>
+      </div>
+
       <div class="row">
-      <img
-        class="img col-3"
-        v-for="index in 17"
-        :key="index"
-        :src="`/img/${index}.jpeg`"
-        alt=""
-      />
-    </div>
+        <img
+          class="img col-3"
+          v-for="index in 17"
+          :key="index"
+          :src="`/img/${index}.jpeg`"
+          alt=""
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -32,11 +33,17 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
-.img{
+.line {
+  border: 1px #000 solid;
+  @include fluid("width", 396);
+  @include fluid("margin-top", 20);
+  margin: 20px auto auto auto;
+}
+.img {
   padding: 40px;
   transition: 0.5s all ease;
 }
-.img:hover{
+.img:hover {
   padding: 20px;
 }
 .wrap--gallery {
@@ -49,5 +56,9 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
   @include fluid("font-size", 40);
   @include fluid("width", 396);
   @include fluid("margin-bottom", 70);
+  h1 {
+    text-align: center;
+    @include fluid("font-size", 40);
+  }
 }
 </style>

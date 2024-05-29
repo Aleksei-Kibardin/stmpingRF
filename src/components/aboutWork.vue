@@ -3,7 +3,10 @@
     <div class="mt-100"></div>
     <div class="row cards">
       <div class="cards--title">
-        <h1 class="title">Видео процесса производства деталей</h1>
+        <div class="title">
+          <h1>Видео процесса производства деталей</h1>
+          <div class="line"></div>
+        </div>
         <div class="videos">
           <div class="video">
             <iframe
@@ -81,7 +84,10 @@
       </div>
     </div>
     <div id="section6" class="container">
-      <h1 class="title activiti">Другие направления деятельности</h1>
+      <div class="title activiti">
+        <h1>Другие направления деятельности</h1>
+        <div class="line"></div>
+      </div>
       <div class="cards">
         <div class="card col-4">
           <div class="wrap-img">
@@ -136,24 +142,34 @@
   @include fluid("margin-top", 100);
   @include fluid("margin-bottom", 100);
   width: 100%;
-  .title {
+  .line {
+    border: 1px #000 solid;
     @include fluid("width", 680);
+    @include fluid("margin-top", 20);
+    margin: 20px auto auto auto;
   }
 }
-#section6{
+#section6 {
   @include fluid("padding-top", 100);
 }
 .title {
   margin: auto;
   font-weight: 700;
   @include fluid("width", 680);
-  @include fluid("font-size", 40);
-  @include fluid("border-width", 1);
   @include fluid("margin-bottom", 50);
-  border-bottom: #000 solid;
+  h1 {
+    @include fluid("font-size", 40);
+  }
 }
 .activiti {
   @include fluid("width", 610);
+  .line {
+    border: 1px #000 solid;
+    @include fluid("width", 610);
+    height: 1px;
+    @include fluid("margin-top", 20);
+    margin: 20px auto auto auto;
+  }
 }
 .videos {
   display: flex;
@@ -166,7 +182,7 @@
   justify-content: space-between;
 }
 
-.wrap-img{
+.wrap-img {
   @include fluid("width", 400);
   @include fluid("height", 224);
   overflow: hidden;
