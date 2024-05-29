@@ -6,7 +6,7 @@
 *::before,
 *::after {
   box-sizing: inherit;
-  font-family: Roboto;
+  font-family: Arsenal;
 }
 a{
   text-decoration: none;
@@ -59,7 +59,7 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 h1{
-  font-family: 'Roboto';
+  font-family: 'Arsenal';
 }
 .container{
   height: 100%;

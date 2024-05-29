@@ -1,5 +1,4 @@
 <template>
-  <div id="section3" class="mt-100"></div>
   <div class="container">
     <div class="wrap--gallery">
       <h1 class="title-gallery">

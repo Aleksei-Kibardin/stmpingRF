@@ -34,14 +34,4 @@ $mail->Subject = 'Заявка с Штамповка РФ';
 $mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта пользователя: ' .$email. '<br>Сообщение:' .$message;
 $mail->AltBody = '';
 
-if($mail->send()) {
-    // Если письмо успешно отправлено, перенаправляем пользователя на предыдущую страницу
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-    exit;
-} else {
-    // Если произошла ошибка при отправке письма, выводим сообщение об ошибке
-    echo 'Error';
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-    exit;
-}
 ?>

@@ -6,13 +6,14 @@
           <div class="txt">
             <p>
               <span>КРУПНОСЕРИЙНАЯ ШТАМПОВКА МЕТАЛЛИЧЕСКИХ ИЗДЕЛИЙ</span><br />
+              <br>
               ЛИСТОВАЯ АВТОМАТИЧЕСКАЯ И ОБЪЁМНАЯ РУЧНАЯ ШТАМПОВКА. ИНЖИНИРИНГ.
               ИМПОРТОЗАМЕЩЕНИЕ. СКВОЗНОЙ КОНТРОЛЬ КАЛИБРАМИ И ИЗМЕРИТЕЛЬНЫМ
               ИНСТРУМЕНТОМ
             </p>
           </div>
           <div class="modal-btn">
-            <modal-form :btnTxt="'Обсудить проект'"></modal-form>
+            <modal-form :btnTxt="'Заказать обратный звонок'"></modal-form>
           </div>
         </div>
         <div class="img--wrap">
@@ -149,7 +150,7 @@ const prevSlide = () => {
   color: #000;
   .txt {
     @include fluid("margin-top", 30);
-    text-align: center;
+    text-align: right;
     width: 100%;
   }
   span {

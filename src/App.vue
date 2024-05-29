@@ -13,7 +13,7 @@
       >
         <span></span>
       </div>
-      <div class="nav--ancors col-6" :class="{ active: isActive }">
+      <div class="nav--ancors" :class="{ active: isActive }">
         <div class="ancor" @click="scrollToAnchor('#section1')">
           Главная
           <div class="ancor-line"></div>
@@ -27,11 +27,19 @@
           <div class="ancor-line"></div>
         </div>
         <div class="ancor" @click="scrollToAnchor('#section3')">
-          Наша продукция
+          Наша Продукция
           <div class="ancor-line"></div>
         </div>
         <div class="ancor" @click="scrollToAnchor('#section5')">
-          Контакты
+          Видео
+          <div class="ancor-line"></div>
+        </div>
+        <div class="ancor" @click="scrollToAnchor('#section6')">
+          Другая Деятельность
+          <div class="ancor-line"></div>
+        </div>
+        <div class="ancor" @click="scrollToAnchor('#section7')">
+          контакты
           <div class="ancor-line"></div>
         </div>
       </div>
@@ -46,6 +54,7 @@
     <about-activiti></about-activiti>
     <services-vue></services-vue>
     <gallery-vue></gallery-vue>
+    <about-work></about-work>
   </main>
   <footerVue></footerVue>
 </template>
@@ -57,6 +66,7 @@ import headerVue from "./components/header.vue";
 import servicesVue from "./components/services.vue";
 import footerVue from "./components/footer.vue";
 import modalForm from "./components/modalForm.vue";
+import aboutWork from "./components/aboutWork.vue"
 import { ref } from "vue";
 
 const isActive = ref(false);
@@ -111,6 +121,8 @@ nav {
 .nav--ancors {
   display: flex;
   justify-content: space-around;
+  @include fluid("gap", 30);
+  @include fluid("margin-left", 40);
   div {
     cursor: pointer;
   }

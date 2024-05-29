@@ -1,5 +1,5 @@
 <template>
-  <div id="section5" class="row">
+  <div id="section7" class="row">
     <div class="container">
       <h1>Контакты компании</h1>
       <div class="contacts">
@@ -9,20 +9,21 @@
             <span>Телефон:</span> +7-901-971-46-64
           </div>
           <div class="address contacts--item">
-            <span>Адресс:</span> г. Санкт-Петербург, Лиговский проспект, 52 К
+            <span>Адрес:</span> г. Санкт-Петербург, Лиговский проспект, 52 К
           </div>
           <div class="email contacts--item">
             <span>Email:</span> spb9714664@yandex.ru
           </div>
-          <modal-form :btnTxt="'Заказать звонок'"></modal-form>
+          <modal-form :btnTxt="'Заказать обратный звонок'"></modal-form>
         </div>
         <div class="map col-6">
           <h2>О нас:</h2>
           <p class="footer-txt">
-            Штамповка.рф — обособленное подразделение Соржинского
-            инструментального завода (ссылка на sorzha.ru), специализирующийся
-            на автоматической листовой и ручной объемной штамповке. более 22 лет
-            производим металлопродукцию для различных отраслей промышленности.
+            Штамповка.рф- обособленное подразделение.
+            <a class="link" href="">Соржинского инструментального завода</a>.
+            специализирующийся на автоматической листовой и ручной объемной
+            штамповке. Более 22 лет производим металлопродукцию для различных
+            отраслей промышленности.
           </p>
         </div>
       </div>
@@ -46,16 +47,24 @@
             Деятельность
             <div class="ancor-line"></div>
           </div>
+          <div class="ancor" @click="scrollToAnchor('#section4')">
+            Услуги
+            <div class="ancor-line"></div>
+          </div>
           <div class="nav-ancor" @click="scrollToAnchor('#section3')">
             Наша продукция
             <div class="ancor-line"></div>
           </div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section4')">
-            Услуги
+          <div class="ancor" @click="scrollToAnchor('#section5')">
+            Видео
             <div class="ancor-line"></div>
           </div>
-          <div class="nav-ancor" @click="scrollToAnchor('#section5')">
-            Контакты
+          <div class="ancor" @click="scrollToAnchor('#section6')">
+            Другая Деятельность
+            <div class="ancor-line"></div>
+          </div>
+          <div class="ancor" @click="scrollToAnchor('#section7')">
+            контакты
             <div class="ancor-line"></div>
           </div>
         </div>
@@ -63,7 +72,6 @@
       </div>
       <div class="footer-row">
         <span>© Все права защищены. 2024</span>
-        <div class="address contacts--item">Политика конфиденциальности</div>
         <div class="email contacts--item">spb9714664@yandex.ru</div>
       </div>
     </div>
@@ -87,6 +95,10 @@ const scrollToAnchor = (anchor) => {
 </script>
 
 <style lang="scss" scoped>
+.link {
+  border-bottom: 1px rgb(253, 255, 252) solid;
+  font-weight: 700;
+}
 @import "../fluid.sass";
 .row {
   background: #5f5f5f;
@@ -94,6 +106,7 @@ const scrollToAnchor = (anchor) => {
 }
 .footer-txt {
   @include fluid("margin", 50);
+  text-align: left;
 }
 footer {
   background: #5f5f5f;
@@ -133,19 +146,7 @@ footer {
   flex-direction: row;
   justify-content: center;
 }
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background: #007fa7;
-  border-radius: 6px 0 0 6px;
-  width: 100%;
-  cursor: pointer;
-  @include fluid("min-width", 220);
-  @include fluid("font-size", 25);
-  @include fluid("height", 48);
-}
+
 .btn--item {
   position: relative;
   border-radius: 0 6px 6px 0;

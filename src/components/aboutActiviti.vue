@@ -4,11 +4,12 @@
     <div class="row wrap-content--activiti">
       <img class="img col-6" src="../assets/rIhFX-UENas.jpg" alt="" />
       <div class="title--activiti col-6">
-        <h2>Предприятие штамповка.РФ это:</h2>
-        <p>
-          обособленное подразделение Соржинского инструментального завода
-          (ссылка на sorzha.ru) специализирующееся на автоматической листовой и
-          ручной объёмной штамповке
+        <h2>Предприятие Штамповка.рф это:</h2>
+        <p class="title-txt">
+          обособленное подразделение
+          <a class="link" href="">Соржинского инструментального завода</a>
+          специализирующееся на автоматической листовой и ручной объёмной
+          штамповке
         </p>
         <ul>
           <li>
@@ -18,7 +19,7 @@
                 alt=""
               />Объём:</span
             >
-            крупносерийное производство металлических изделий
+            <p>Крупносерийное производство металлических изделий</p>
           </li>
           <li>
             <span class="t">
@@ -27,7 +28,7 @@
                 alt=""
               />Гибкость:</span
             >
-            производство изделий малыми и средними партиями
+            <p>Производство изделий малыми и средними партиями</p>
           </li>
           <li>
             <span class="t">
@@ -37,8 +38,10 @@
               />
               Исследования:</span
             >
-            опытное производство изделий, проектирование, прототипирование,
-            инжиниринг
+            <p>
+              Опытное производство изделий, проектирование, прототипирование,
+              инжиниринг
+            </p>
           </li>
           <li>
             <span class="t">
@@ -47,20 +50,23 @@
                 alt=""
               />Технологии:</span
             >
-            компонентное производство - мехобработка изделий, закалка объёмная и
-            индукционная, гальваника
+            <p>
+              Компонентное производство - мехобработка изделий, закалка объёмная
+              и индукционная, гальваника
+            </p>
           </li>
-          <li><p>
+          <li>
             <span class="t">
               <img
                 src="https://cdn-icons-png.freepik.com/512/15570/15570022.png?ga=GA1.1.504983204.1715074229"
                 alt=""
               />Контроль качества:</span
             >
-              сквозной контроль контролируемых размеров калибрами и измерительным
-            инструментом. Документирование. Опытные и контрольные образцы..
+            <p>
+              Сквозной контроль контролируемых размеров калибрами и
+              измерительным инструментом. Документирование. Опытные и
+              контрольные образцы..
             </p>
-            
           </li>
         </ul>
         <div class="midle-contacts">
@@ -73,10 +79,10 @@
             </p>
             <p>Позвоните: <span>+7(901)9714664</span></p>
             <p>Письмо в свободной форме: <span>spb9714664@yandex.ru</span></p>
+            <div class="contact-btn">
+              <modal-form :btnTxt="'Заказать обратный звонок'"></modal-form>
+            </div>
           </div>
-        </div>
-        <div class="contact-btn">
-          <modal-form :btnTxt="'Обсудить проект'"></modal-form>
         </div>
       </div>
     </div>
@@ -128,10 +134,18 @@ const cards = [
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
+.link {
+  color: black;
+  border-bottom: 1px rgb(0, 0, 0) solid;
+  font-weight: 700;
+}
 .midle-contacts {
-  @include fluid("margin-top", 50);
+  background: #b5cbd4;
+  padding: 10px;
+  @include fluid("margin-top", 20);
   display: flex;
   align-self: center;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
   .midle-contacts--title {
@@ -140,13 +154,14 @@ const cards = [
     align-self: center;
     width: 35%;
     height: 100%;
-    border-right: #b5cbd4 solid;
+    border-right: #728f9b solid;
     @include fluid("border-right-width", 5);
     span {
       font-weight: 900;
     }
   }
   .midle-contacts--txt {
+    @include fluid("width", 400);
     margin-left: 20px;
     span {
       font-weight: 700;
@@ -159,16 +174,19 @@ const cards = [
 }
 .wrap-content--activiti {
   justify-content: center;
-  @include fluid("gap", 100);
+  @include fluid("gap", 60);
 }
 .title--activiti {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
+  padding: 0;
+  @include fluid("margin-top", -100);
   @include fluid("gap", 10);
   @include fluid("font-size", 20);
   h2 {
+    margin-left: 70px;
     @include fluid("font-size", 30);
   }
   p {
@@ -178,6 +196,9 @@ const cards = [
     list-style-type: none;
     @include fluid("margin-top", 20);
     @include fluid("font-size", 18);
+    p {
+      @include fluid("margin-left", 50);
+    }
   }
   .t {
     display: flex;
@@ -206,5 +227,9 @@ const cards = [
       @include fluid("font-size", 26);
     }
   }
+}
+.title-txt {
+  font-weight: 600;
+  margin-left: 90px;
 }
 </style>

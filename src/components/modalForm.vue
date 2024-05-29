@@ -1,35 +1,51 @@
 <template>
-  <div class="btn" @click="openModal()">{{props.btnTxt}}</div>
+  <div class="btn" @click="openModal()">{{ props.btnTxt }}</div>
   <div class="backdrop" @click="closeModal" v-if="active === true"></div>
   <div class="modal-window" v-if="active === true">
-    <form
-      class="obratnuj-zvonok"
-      v-if="!formSubmitted"
-    >
+    <form class="obratnuj-zvonok" v-if="!formSubmitted">
       <div class="modal-title">
         <h1>Обратный звонок</h1>
-        <p>Заполните поля, и мы вам перезвоним</p>
+        <p>
+          Для обсуждения деталей вашей задачи заполните, пожалуйста, поля. И мы вам непременно перезвоним.
+        </p>
       </div>
       <input type="hidden" name="form-name" value="name_of_my_form" />
 
       <div class="form-zvonok">
         <div>
-          <label>Имя <span>*</span></label>
-          <input v-model="formData.name" type="text" name="name" required />
+          <input
+            v-model="formData.name"
+            type="text"
+            name="name"
+            required
+            placeholder="Ваше имя"
+          />
         </div>
         <div>
-          <label>Почта <span>*</span></label>
-          <input v-model="formData.email" type="text" name="email" required />
+          <input
+            v-model="formData.number"
+            @input="eventCallback"
+            @blur="eventCallback"
+            @focus="eventCallback"
+            :data-phone-pattern="pattern"
+            :data-phone-clear="clearOnBlur"
+            type="text"
+            name="number"
+            placeholder="Ваш номер телефона"
+            required
+          />
         </div>
         <div>
-          <label>Номер телефона (с кодом) <span>*</span></label>
-          <input v-model="formData.number" type="text" name="number" required />
+          <input
+            v-model="formData.question"
+            type="text"
+            name="question"
+            placeholder="Сообщение(необязательно)"
+          />
         </div>
-        <div>
-          <label>Сообщение</label>
-          <input v-model="formData.question" type="text" name="question" />
-        </div>
-        <button @click="post()" class="bot-send-mail" type="submit">Послать заявку</button>
+        <button @click="post()" class="bot-send-mail" type="submit">
+          Позвоните мне
+        </button>
       </div>
     </form>
     <div v-else>
@@ -45,6 +61,38 @@ import { submitForm } from "../services/form.js";
 const props = defineProps({
   btnTxt: String,
 });
+
+const phone = ref("");
+const pattern = ref("+7(___) ___-__-__");
+const clearOnBlur = ref("true");
+
+const eventCallback = (e) => {
+  const el = e.target;
+  const clearVal = el.dataset.phoneClear;
+  const matrix = el.dataset.phonePattern || "+7(___) ___-__-__";
+  let i = 0;
+  const def = matrix.replace(/\D/g, "");
+  let val = el.value.replace(/\D/g, "");
+
+  if (clearVal !== "false" && e.type === "blur") {
+    if (val.length < matrix.match(/([\_\d])/g).length) {
+      el.value = "";
+      return;
+    }
+  }
+
+  if (def.length >= val.length) val = def;
+
+  el.value = matrix.replace(/./g, (a) => {
+    return /[_\d]/.test(a) && i < val.length
+      ? val.charAt(i++)
+      : i >= val.length
+      ? ""
+      : a;
+  });
+
+  phone.value = el.value;
+};
 
 const active = ref(false);
 const formSubmitted = ref(false);
@@ -74,7 +122,6 @@ const closeModal = (event) => {
 const post = async () => {
   await submitForm(formData, formSubmitted, message);
 };
-
 </script>
 
 <style lang="scss" scoped>
@@ -86,9 +133,9 @@ const post = async () => {
   cursor: pointer;
   width: auto;
   text-align: center;
-  @include fluid("width", 200);
-  @include fluid("padding", 10);
-  @include fluid("font-size", 18);
+  @include fluid("width", 290);
+  @include fluid("padding", 13);
+  @include fluid("font-size", 20);
   border-radius: 0;
   transition: 1s all ease;
 }
@@ -165,16 +212,20 @@ const post = async () => {
   background: none;
   border: none;
   text-transform: uppercase;
-  
+
   font-weight: 700;
   background-color: #f89537;
   cursor: pointer;
   border: 3px #ffd50034 solid;
-  
 }
 .form-zvonok .bot-send-mail:hover {
   color: #009b97;
   background-color: #fff;
+}
+.modal-title {
+  h1 {
+    @include fluid("margin-bottom", 20);
+  }
 }
 
 @media (min-width: 200px) and (max-width: 500px) {
@@ -184,6 +235,9 @@ const post = async () => {
   }
   .modal-title {
     font-size: 8px;
+    h1 {
+      margin-bottom: 10px;
+    }
   }
   .form-zvonok {
     font-size: 10px;

@@ -3,7 +3,7 @@
     <div class="mt-100"></div>
     <div class="title--services col-12">
       <div>
-        <h1>Наши услуги</h1>
+        <h1>Наши возможности для вас</h1>
         <div class="line"></div>
       </div>
     </div>
@@ -157,7 +157,7 @@ import servicesList from './servicesList.vue'
 
 .line {
   border: 1px #000 solid;
-  @include fluid("width", 250);
+  @include fluid("width", 517);
   @include fluid("margin-top", 20);
   margin: 20px auto auto auto;
 }
