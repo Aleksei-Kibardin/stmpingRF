@@ -33,10 +33,12 @@ const currentImage = ref("");
 const openImage = (src) => {
   currentImage.value = src;
   showModal.value = true;
+  document.body.classList.add("modal-open");
 };
 
 const closeModal = () => {
   showModal.value = false;
+  document.body.classList.remove("modal-open");
 };
 </script>
 
@@ -47,7 +49,7 @@ const closeModal = () => {
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 100000;
   left: 0;
   top: 0;
   width: 100%;

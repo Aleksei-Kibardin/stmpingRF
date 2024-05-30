@@ -153,9 +153,6 @@ const post = async () => {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
 }
-.modal-open {
-  overflow: hidden;
-}
 .modal-window {
   display: flex;
   justify-content: center;
@@ -168,7 +165,7 @@ const post = async () => {
   background-color: #eeeeee;
   color: #000;
   padding: 30px;
-  z-index: 999;
+  z-index: 99089789;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 }
 

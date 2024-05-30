@@ -319,4 +319,7 @@ nav {
 .mt-100 {
   @include fluid("height", 100);
 }
+.modal-open {
+  overflow: hidden;
+}
 </style>
