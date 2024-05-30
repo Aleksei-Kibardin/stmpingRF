@@ -211,9 +211,10 @@ nav {
   @include fluid("width", 45);
   transition: all 0.3s ease 0s;
 }
-@media (min-width: 200px) and (max-width: 500px) {
+@media (max-width: 991px) {
   .menu-btn {
     display: flex;
+    left: 18%;
   }
   .nav-contact--btn {
     width: 42%;
@@ -230,9 +231,10 @@ nav {
     justify-content: center;
     align-items: center;
     opacity: 0;
+    width: 100%;
     @include fluid("top", 100);
     @include fluid("gap", 40);
-    @include fluid("height", 500);
+    @include fluid("height", 800);
     transform: translateX(500px);
     transition: all 1s ease 0s;
     left: 0;
@@ -244,10 +246,6 @@ nav {
     opacity: 1;
     width: 100%;
     transform: translateX(0px);
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
-    display: none;
   }
 }
 @media (min-width: 200px) and (max-width: 300px) {

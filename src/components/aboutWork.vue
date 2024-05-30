@@ -10,8 +10,7 @@
         <div class="videos">
           <div class="video">
             <iframe
-              width="400"
-              height="215"
+              class="video-item"
               src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
               title="YouTube video player"
               frameborder="0"
@@ -22,8 +21,7 @@
           </div>
           <div class="video">
             <iframe
-              width="400"
-              height="215"
+              class="video-item"
               src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
               title="YouTube video player"
               frameborder="0"
@@ -34,8 +32,7 @@
           </div>
           <div class="video">
             <iframe
-              width="400"
-              height="215"
+              class="video-item"
               src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
               title="YouTube video player"
               frameborder="0"
@@ -46,8 +43,7 @@
           </div>
           <div class="video">
             <iframe
-              width="400"
-              height="215"
+              class="video-item"
               src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
               title="YouTube video player"
               frameborder="0"
@@ -58,8 +54,7 @@
           </div>
           <div class="video">
             <iframe
-              width="400"
-              height="215"
+              class="video-item"
               src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
               title="YouTube video player"
               frameborder="0"
@@ -70,8 +65,7 @@
           </div>
           <div class="video">
             <iframe
-              width="400"
-              height="215"
+              class="video-item"
               src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
               title="YouTube video player"
               frameborder="0"
@@ -174,6 +168,7 @@
 .videos {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   @include fluid("gap", 20);
   gap: 20px;
 }
@@ -183,12 +178,10 @@
 }
 
 .wrap-img {
-  @include fluid("width", 400);
   @include fluid("height", 224);
   overflow: hidden;
 }
 .img--card {
-  @include fluid("width", 400);
   transition: 0.4s all ease;
 }
 
@@ -202,4 +195,8 @@
   @include fluid("font-size", 18);
   font-weight: 700;
 }
+.video-item {
+    @include fluid("width", 400);
+    @include fluid("height", 215);
+  }
 </style>

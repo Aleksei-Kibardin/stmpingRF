@@ -33,9 +33,9 @@
     <div class="container footer">
       <div class="footer-row">
         <div class="logo">
-        <img class="" src="/logo.svg" alt="логотип" />
-        Штамповка.рф
-      </div>
+          <img class="" src="/logo.svg" alt="логотип" />
+          Штамповка.рф
+        </div>
         <div class="nav-ancors">
           <div class="nav-ancor" @click="scrollToAnchor('#section1')">
             Главная
@@ -251,6 +251,16 @@ footer {
 @media (min-width: 200px) and (max-width: 300px) {
   .nav-ancors {
     display: none;
+  }
+}
+@media (max-width: 991px) {
+  .footer-txt{
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .contacts{
+    @include fluid("gap", 35);
   }
 }
 </style>

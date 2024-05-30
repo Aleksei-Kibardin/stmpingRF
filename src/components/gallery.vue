@@ -61,4 +61,14 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
     @include fluid("font-size", 40);
   }
 }
+@media (max-width: 991px) {
+  .img {
+  width: 30%;
+}
+.wrap--gallery{
+  .row{
+    justify-content: center;
+  }
+}
+}
 </style>

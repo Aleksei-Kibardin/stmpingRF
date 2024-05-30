@@ -6,7 +6,8 @@
       <div class="modal-title">
         <h1>Обратный звонок</h1>
         <p>
-          Для обсуждения деталей вашей задачи заполните, пожалуйста, поля. И мы вам непременно перезвоним.
+          Для обсуждения деталей вашей задачи заполните, пожалуйста, поля. И мы
+          вам непременно перезвоним.
         </p>
       </div>
       <input type="hidden" name="form-name" value="name_of_my_form" />
@@ -127,7 +128,7 @@ const post = async () => {
 <style lang="scss" scoped>
 @import "../fluid.sass";
 .btn {
-  background: #cb9a74;
+  background: #34b9d9;
   color: #fff;
   font-weight: 700;
   cursor: pointer;
@@ -137,7 +138,7 @@ const post = async () => {
   @include fluid("padding", 13);
   @include fluid("font-size", 20);
   border-radius: 0;
-  transition: 1s all ease;
+  transition: 0.3s all ease;
 }
 .btn:hover {
   background: #ff9747;
@@ -214,13 +215,14 @@ const post = async () => {
   text-transform: uppercase;
 
   font-weight: 700;
-  background-color: #f89537;
+  background-color: #34b9d9;
   cursor: pointer;
   border: 3px #ffd50034 solid;
+  transition: 0.5s all ease;
 }
 .form-zvonok .bot-send-mail:hover {
-  color: #009b97;
-  background-color: #fff;
+  color: #000000;
+  background-color: #ff9747;
 }
 .modal-title {
   h1 {

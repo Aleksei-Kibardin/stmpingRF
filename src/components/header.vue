@@ -6,7 +6,7 @@
           <div class="txt">
             <p>
               <span>КРУПНОСЕРИЙНАЯ ШТАМПОВКА МЕТАЛЛИЧЕСКИХ ИЗДЕЛИЙ</span><br />
-              <br>
+              <br />
               ЛИСТОВАЯ АВТОМАТИЧЕСКАЯ И ОБЪЁМНАЯ РУЧНАЯ ШТАМПОВКА. ИНЖИНИРИНГ.
               ИМПОРТОЗАМЕЩЕНИЕ. СКВОЗНОЙ КОНТРОЛЬ КАЛИБРАМИ И ИЗМЕРИТЕЛЬНЫМ
               ИНСТРУМЕНТОМ
@@ -22,7 +22,7 @@
             :style="{ backgroundImage: `url(${slides[currentSlide].src})` }"
           ></div>
           <div class="wrap-btn-slider">
-            <div class="prev" @click="prevSlide()"></div>
+            <div class="prev" @click="prevSlide(intervalId)"></div>
             <div class="pagination">
               <div
                 class="dot"
@@ -32,7 +32,7 @@
                 :class="{ active: currentSlide === i }"
               ></div>
             </div>
-            <div class="next" @click="nextSlide()"></div>
+            <div class="next" @click="nextSlide(intervalId)"></div>
           </div>
         </div>
       </div>
@@ -59,21 +59,22 @@ const slides = [
     src: "https://tdc-zavod.ru/img/catalog/c10.jpg",
   },
 ];
+const nextSlide = (interval) => {
+  currentSlide.value = currentSlide.value === 3 ? 0 : currentSlide.value + 1;
+  if (interval) {
+    clearInterval(interval);
+  }
+};
+const prevSlide = (interval) => {
+  currentSlide.value = currentSlide.value === 0 ? 3 : currentSlide.value - 1;
+  if (interval) {
+    clearInterval(interval);
+  }
+};
 const currentSlide = ref(0);
-const nextSlide = () => {
-  if (currentSlide.value === 3) {
-    currentSlide.value = 0;
-  } else {
-    currentSlide.value++;
-  }
-};
-const prevSlide = () => {
-  if (currentSlide.value === 0) {
-    currentSlide.value = 3;
-  } else {
-    currentSlide.value--;
-  }
-};
+const intervalId = setInterval(() => {
+  nextSlide();
+}, 4000);
 </script>
 
 <style lang="scss" scoped>
@@ -83,7 +84,7 @@ const prevSlide = () => {
 }
 .head--container {
   @include fluid("margin-top", 70);
-  height: 100vh;
+  @include fluid("height", 900);
 }
 .img--wrap {
   @include fluid("height", 600);
@@ -169,6 +170,9 @@ const prevSlide = () => {
   align-items: center;
 }
 @media (max-width: 991px) {
+  .head--container {
+    height: 50vh;
+  }
   .content-header {
     h1 {
       @include fluid("width", 700);
@@ -176,6 +180,18 @@ const prevSlide = () => {
     p {
       @include fluid("font-size", 26);
     }
+    .txt {
+      text-align: center;
+    }
+  }
+  .img {
+    @include fluid("width", 800);
+    @include fluid("height", 800);
+  }
+
+  .img--wrap {
+    @include fluid("width", 800);
+    @include fluid("height", 800);
   }
 }
 </style>

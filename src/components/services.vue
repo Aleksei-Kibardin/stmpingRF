@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import servicesList from './servicesList.vue'
+import servicesList from "./servicesList.vue";
 // import { reactive, ref } from "vue";
 
 // const slides = [

@@ -192,15 +192,31 @@ const currentTab = ref(tabs.value[0])
   .tab--list {
     margin-top: 50px;
   }
-  .wrap--tab--content h1 {
-    @include fluid("font-size", 37);
-  }
-  .wrap--tab--content span {
-    @include fluid("font-size", 24);
+  .tab--txt {
+    @include fluid("font-size", 30);
   }
 }
 .tab--img {
   @include fluid("margin-bottom", 30);
   transition: all 0.5s ease 0.01s;
+}
+@media (max-width: 991px) {
+  .tab-container{
+    flex-direction: column;
+  }
+  .wrap--tab--content {
+    margin-left: 0;
+    span{
+      @include fluid("font-size", 30);
+    }
+  }
+  .tab--list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tab-btn{
+    @include fluid("font-size", 20);
+  }
 }
 </style>

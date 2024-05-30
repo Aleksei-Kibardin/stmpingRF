@@ -224,8 +224,19 @@ const cards = [
       @include fluid("font-size", 39);
     }
     p {
-      @include fluid("font-size", 26);
+      @include fluid("font-size", 30);
     }
+  }
+  .t{
+    @include fluid("font-size", 33);
+  }
+  .img {
+    @include fluid("width", 800);
+    @include fluid("height", 800);
+    @include fluid("margin-bottom", 90);
+  }
+  .midle-contacts--title{
+    @include fluid("font-size", 40);
   }
 }
 .title-txt {
