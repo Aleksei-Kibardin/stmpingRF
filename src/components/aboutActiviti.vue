@@ -211,6 +211,10 @@ const cards = [
     width: 30px;
   }
 }
+.title-txt {
+  font-weight: 600;
+  @include fluid("margin-left", 100);
+}
 .img {
   box-shadow: var(--midle-box-x) var(--midle-box-y) 0 0 #b5cbd4;
   @include fluid("width", 490);
@@ -227,7 +231,7 @@ const cards = [
       @include fluid("font-size", 30);
     }
   }
-  .t{
+  .t {
     @include fluid("font-size", 33);
   }
   .img {
@@ -235,20 +239,19 @@ const cards = [
     @include fluid("height", 800);
     @include fluid("margin-bottom", 90);
   }
-  .midle-contacts--title{
+  .midle-contacts--title {
     @include fluid("font-size", 40);
   }
   .midle-contacts--txt {
     width: 60% !important;
+  }
+  .title-txt {
+    @include fluid("margin-left", 200);
   }
 }
 @media (max-width: 450px) {
   .midle-contacts--txt {
     width: 50% !important;
   }
-}
-.title-txt {
-  font-weight: 600;
-  @include fluid("margin-left", 100);
 }
 </style>
