@@ -25,15 +25,13 @@
         <div>
           <input
             v-model="formData.number"
-            @input="eventCallback"
-            @blur="eventCallback"
-            @focus="eventCallback"
-            :data-phone-pattern="pattern"
-            :data-phone-clear="clearOnBlur"
             type="text"
-            name="number"
-            placeholder="Ваш номер телефона"
-            required
+            name="phone"
+            id="phone"
+            placeholder="+7(000)000-00-00"
+            class="form__field"
+            ref="phoneInput"
+            @focus="applyMask"
           />
         </div>
         <div>
@@ -58,43 +56,13 @@
 <script setup>
 import { ref, reactive, watch } from "vue";
 import { submitForm } from "../services/form.js";
+import IMask from "imask";
 
 const props = defineProps({
   btnTxt: String,
 });
 
-const phone = ref("");
-const pattern = ref("+7(___) ___-__-__");
-const clearOnBlur = ref("true");
-
-const eventCallback = (e) => {
-  const el = e.target;
-  const clearVal = el.dataset.phoneClear;
-  const matrix = el.dataset.phonePattern || "+7(___) ___-__-__";
-  let i = 0;
-  const def = matrix.replace(/\D/g, "");
-  let val = el.value.replace(/\D/g, "");
-
-  if (clearVal !== "false" && e.type === "blur") {
-    if (val.length < matrix.match(/([\_\d])/g).length) {
-      el.value = "";
-      return;
-    }
-  }
-
-  if (def.length >= val.length) val = def;
-
-  el.value = matrix.replace(/./g, (a) => {
-    return /[_\d]/.test(a) && i < val.length
-      ? val.charAt(i++)
-      : i >= val.length
-      ? ""
-      : a;
-  });
-
-  phone.value = el.value;
-};
-
+const phoneInput = ref(null);
 const active = ref(false);
 const formSubmitted = ref(false);
 const message = ref("");
@@ -104,6 +72,15 @@ const formData = reactive({
   email: "",
   question: "",
 });
+
+const applyMask = () => {
+  if (phoneInput.value && !phoneInput.value.maskRef) {
+    phoneInput.value.maskRef = IMask(phoneInput.value, {
+      mask: "+7(000)000-00-00",
+      lazy: false,
+    });
+  }
+};
 
 watch(formData, () => {
   formData.number = formData.number.replace(/[^\d+()]/g, "");
