@@ -86,6 +86,10 @@ const scrollToAnchor = (anchor) => {
 
 <style lang="scss">
 @import "./fluid.sass";
+main{
+  display: flex;
+  flex-direction: column;
+}
 :root {
   @include fluid("--head-box-x", 230);
   @include fluid("--head-box-y", 100);

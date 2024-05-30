@@ -161,7 +161,7 @@ const cards = [
     }
   }
   .midle-contacts--txt {
-    @include fluid("width", 400);
+    @include fluid("width", 380);
     margin-left: 20px;
     span {
       font-weight: 700;
@@ -238,9 +238,17 @@ const cards = [
   .midle-contacts--title{
     @include fluid("font-size", 40);
   }
+  .midle-contacts--txt {
+    width: 60% !important;
+  }
+}
+@media (max-width: 450px) {
+  .midle-contacts--txt {
+    width: 50% !important;
+  }
 }
 .title-txt {
   font-weight: 600;
-  margin-left: 90px;
+  @include fluid("margin-left", 100);
 }
 </style>

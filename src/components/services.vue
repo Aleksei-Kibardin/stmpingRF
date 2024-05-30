@@ -181,7 +181,6 @@ import servicesList from "./servicesList.vue";
   display: flex;
   justify-content: left;
   padding: 0;
-  @include fluid("margin-top", 70);
 }
 .services--item {
   padding: 0;
