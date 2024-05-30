@@ -43,7 +43,7 @@
           <div class="ancor-line"></div>
         </div>
       </div>
-      <div class="nav-contact--btn col-3">
+      <div class="nav-contact--btn">
         <span> +7-901-971-46-64</span>
         <span> spb9714664@yandex.ru</span>
       </div>
@@ -86,7 +86,7 @@ const scrollToAnchor = (anchor) => {
 
 <style lang="scss">
 @import "./fluid.sass";
-main{
+main {
   display: flex;
   flex-direction: column;
 }
@@ -99,12 +99,12 @@ main{
   @include fluid("--last-box-y", -100);
 }
 .logo {
-  width: 100px;
   display: flex;
   align-items: center;
-  font-size: 20px;
-  img{
-    width: 45px;
+  @include fluid("width", 100);
+  @include fluid("font-size", 30);
+  img {
+    @include fluid("width", 50);
   }
 }
 .container {
@@ -164,6 +164,7 @@ nav {
   text-align: right;
   cursor: pointer;
   span {
+    @include fluid("margin-right", 20);
     @include fluid("font-size", 18);
   }
 }
