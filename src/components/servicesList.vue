@@ -22,7 +22,7 @@
               :alt="`${currentTab.title}`"
             />
           </div>
-          <span>Об услуге:</span>
+          <span>О услуге:</span>
           <div class="tab--txt">{{ currentTab.description }}</div>
           <br />
         

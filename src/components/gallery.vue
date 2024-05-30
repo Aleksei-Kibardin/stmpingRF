@@ -9,10 +9,10 @@
       <div class="row">
         <img
           class="img col-3"
-          v-for="index in 17"
+          v-for="index in 28"
           :key="index"
-          :src="`/img/${index}.jpeg`"
-          @click="openImage(`/img/${index}.jpeg`)"
+          :src="`/img/Shtampovka (${index}).jpg`"
+          @click="openImage(`/img/Shtampovka (${index}).jpg`)"
           alt=""
         />
       </div>
