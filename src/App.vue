@@ -236,6 +236,7 @@ nav {
     align-items: center;
     opacity: 0;
     width: 100%;
+    margin-left: 0;
     @include fluid("top", 100);
     @include fluid("gap", 40);
     @include fluid("height", 800);

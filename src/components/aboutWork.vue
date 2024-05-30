@@ -82,7 +82,7 @@
         <h1>Другие направления деятельности</h1>
         <div class="line"></div>
       </div>
-      <div class="cards">
+      <div class="cards row">
         <div class="card col-4">
           <div class="wrap-img">
             <img
@@ -196,7 +196,19 @@
   font-weight: 700;
 }
 .video-item {
-    @include fluid("width", 400);
-    @include fluid("height", 215);
+  @include fluid("width", 400);
+  @include fluid("height", 215);
+}
+@media (max-width: 1000px) {
+  .cards {
+    gap: 20px;
+    justify-content: center;
   }
+  .wrap-img{
+    height: 70%;
+  }
+  .txt--card{
+    @include fluid("font-size", 30);
+  }
+}
 </style>

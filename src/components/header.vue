@@ -171,8 +171,9 @@ const intervalId = setInterval(() => {
 }
 @media (max-width: 991px) {
   .head--container {
-    height: 50vh;
-    margin-bottom: 30%;
+    height: 100%;
+    margin-bottom: 20%;
+    margin-top: 10%;
   }
   .content-header {
     h1 {

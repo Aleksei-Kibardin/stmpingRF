@@ -256,4 +256,10 @@ const post = async () => {
     margin-top: 10px;
   }
 }
+@media (max-width: 991px) {
+  .btn {
+    @include fluid("width", 600);
+    @include fluid("font-size", 45);
+  }
+}
 </style>
