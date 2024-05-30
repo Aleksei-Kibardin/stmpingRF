@@ -186,7 +186,7 @@ const cards = [
   @include fluid("gap", 10);
   @include fluid("font-size", 20);
   h2 {
-    margin-left: 70px;
+    @include fluid("margin-left", 70);
     @include fluid("font-size", 30);
   }
   p {
