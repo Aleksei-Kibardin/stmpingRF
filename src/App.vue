@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="nav-contact--btn">
-        <span> +7-901-971-46-64</span>
+        <a class="phone" href="tel:+79019714664"> +7-901-971-46-64</a>
         <span> spb9714664@yandex.ru</span>
       </div>
     </div>
@@ -163,7 +163,8 @@ nav {
   flex-direction: column;
   text-align: right;
   cursor: pointer;
-  span {
+  span, a {
+    color: #000;
     @include fluid("margin-right", 20);
     @include fluid("font-size", 18);
   }

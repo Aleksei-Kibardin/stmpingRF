@@ -6,7 +6,7 @@
         <div class="contacts-items col-6">
           <h3>Контактные данные:</h3>
           <div class="phone contacts--item">
-            <span>Телефон:</span> +7-901-971-46-64
+            <span>Телефон:</span> <a class="phone contacts--item" href="tel:+79019714664"> +7-901-971-46-64</a>
           </div>
           <div class="address contacts--item">
             <span>Адрес:</span> г. Санкт-Петербург, Лиговский проспект, 52 К
@@ -66,7 +66,7 @@
             <div class="ancor-line"></div>
           </div>
         </div>
-        <div class="phone contacts--item">+7-901-971-46-64</div>
+        <a class="phone contacts--item" href="tel:+79019714664"> +7-901-971-46-64</a>
       </div>
       <div class="footer-row">
         <span>© Все права защищены. 2024</span>
@@ -130,8 +130,12 @@ footer {
 }
 .contacts--item {
   span {
+    color: #fff;
     margin-right: 20px;
   }
+}
+.phone{
+  color: #fff;
 }
 .contacts-items {
   text-align: start;
