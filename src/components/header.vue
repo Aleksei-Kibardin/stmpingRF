@@ -7,20 +7,27 @@
             <p>
               <span>КРУПНОСЕРИЙНАЯ ШТАМПОВКА МЕТАЛЛИЧЕСКИХ ИЗДЕЛИЙ</span><br />
               <br />
-              ЛИСТОВАЯ АВТОМАТИЧЕСКАЯ <br> ОБЪЁМНАЯ РУЧНАЯ ШТАМПОВКА. <br> ИНЖИНИРИНГ.
-              ИМПОРТОЗАМЕЩЕНИЕ. <br> СКВОЗНОЙ КОНТРОЛЬ КАЛИБРАМИ И ИЗМЕРИТЕЛЬНЫМ
-              ИНСТРУМЕНТОМ
+              ЛИСТОВАЯ АВТОМАТИЧЕСКАЯ <br />
+              ОБЪЁМНАЯ РУЧНАЯ ШТАМПОВКА. <br />
+              ИНЖИНИРИНГ. ИМПОРТОЗАМЕЩЕНИЕ. <br />
+              СКВОЗНОЙ КОНТРОЛЬ КАЛИБРАМИ И ИЗМЕРИТЕЛЬНЫМ ИНСТРУМЕНТОМ
             </p>
           </div>
           <div class="modal-btn">
             <modal-form :btnTxt="'Заказать обратный звонок'"></modal-form>
           </div>
         </div>
-        <div class="img--wrap">
-          <div
-            class="img"
-            :style="{ backgroundImage: `url(${slides[currentSlide].src})` }"
-          ></div>
+        <div class="slider--wrap">
+          <div class="img--wrap">
+            <img
+              v-for="(t, i) in slides"
+              class="img"
+              :key="t"
+              :class="{ 'active-img': currentSlide === i }"
+              :src="`${t.src}`"
+              alt=""
+            />
+          </div>
           <div class="wrap-btn-slider">
             <div class="prev" @click="prevSlide(intervalId)"></div>
             <div class="pagination">
@@ -86,17 +93,24 @@ const intervalId = setInterval(() => {
   @include fluid("margin-top", 70);
   @include fluid("height", 900);
 }
-.img--wrap {
+.slider--wrap {
   @include fluid("height", 600);
   padding: 0;
   position: relative;
 }
+.img--wrap{
+  position: relative;
+  @include fluid("width", 600);
+  @include fluid("height", 600);
+}
 .img {
+  position: absolute;
   box-shadow: var(--head-box-x) var(--head-box-y) 0 0 #b5cbd4;
   @include fluid("width", 600);
   @include fluid("height", 600);
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0;
   transition: 0.5s all ease;
 }
 .wrap-btn-slider {
@@ -118,6 +132,10 @@ const intervalId = setInterval(() => {
   opacity: 0.5;
   border-radius: 50%;
   transition: 1s all ease;
+}
+.active-img{
+  display: block;
+  opacity: 1;
 }
 .active {
   opacity: 1;
@@ -186,6 +204,5 @@ const intervalId = setInterval(() => {
       text-align: center;
     }
   }
-  
 }
 </style>
