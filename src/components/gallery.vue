@@ -89,11 +89,11 @@ const closeModal = () => {
   margin: 20px auto auto auto;
 }
 .img {
-  padding: 40px;
+  @include fluid("padding", 40);
   transition: 0.5s all ease;
 }
 .img:hover {
-  padding: 20px;
+  @include fluid("padding", 20);
 }
 .wrap--gallery {
   display: flex;

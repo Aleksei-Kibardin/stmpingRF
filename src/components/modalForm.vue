@@ -232,7 +232,7 @@ const post = async () => {
 }
 @media (max-width: 991px) {
   .btn {
-    @include fluid("width", 600);
+    width: 100%;
     @include fluid("font-size", 45);
   }
 }
