@@ -71,7 +71,7 @@
           <div class="wrap-img">
             <img
               class="img--card"
-              src="/img/Холодная листовая штамповка.jpeg"
+              src="https://i0.wp.com/theconstructor.org/wp-content/uploads/2017/12/instruments-used-in-engineering-drawings.jpg?fit=614%2C374&ssl=1"
               alt=""
             />
           </div>
@@ -85,7 +85,7 @@
           <div class="wrap-img">
             <img
               class="img--card"
-              src="/img/Холодная листовая штамповка.jpeg"
+              src="https://www.sz-sunrui.com/data/watermark/20220418/625d77c49aff5_.webp"
               alt=""
             />
           </div>
@@ -98,7 +98,7 @@
           <div class="wrap-img">
             <img
               class="img--card"
-              src="/img/Холодная листовая штамповка.jpeg"
+              src="https://www.ocher.ru/upload/medialibrary/7d8/7d8de083e0a6a11fe9f7d9befd144432.jpg"
               alt=""
             />
           </div>
