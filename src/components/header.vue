@@ -54,10 +54,10 @@ import modalForm from "./modalForm.vue";
 const modalActive = ref(false);
 const slides = [
   {
-    src: "http://admin29.solinepro.ru/progresstamp2//upload/user/new%20foto/ZH_00544_HDR.jpg",
+    src: "https://domart.com/sites/default/files/inline-images/holodnaya_shtampovka.jpg",
   },
   {
-    src: "https://domart.com/sites/default/files/inline-images/holodnaya_shtampovka.jpg",
+    src: "https://cly-del.com/media/pages/services/precision-metal-stamping/progressive-stamping/b4b823bdf6-1684331756/services-progressive-metal-stamping-1920x-q72.jpg",
   },
   {
     src: "https://avatars.dzeninfra.ru/get-zen_doc/3753737/pub_63c51301431ef9119c890df5_63c51317ccc0933e4ca638c1/scale_1200",
@@ -98,7 +98,7 @@ const intervalId = setInterval(() => {
   padding: 0;
   position: relative;
 }
-.img--wrap{
+.img--wrap {
   position: relative;
   @include fluid("width", 600);
   @include fluid("height", 600);
@@ -133,7 +133,7 @@ const intervalId = setInterval(() => {
   border-radius: 50%;
   transition: 1s all ease;
 }
-.active-img{
+.active-img {
   display: block;
   opacity: 1;
 }
