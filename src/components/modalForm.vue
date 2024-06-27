@@ -69,7 +69,6 @@ const message = ref("");
 const formData = reactive({
   name: "",
   number: "",
-  email: "",
   question: "",
 });
 

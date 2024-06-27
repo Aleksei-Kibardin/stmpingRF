@@ -1,6 +1,4 @@
-// @ts-ignore
 export const submitForm = async (formData, formSubmitted, message) => {
-  event.preventDefault()
   try {
     const response = await fetch("/mail.php", {
       method: "POST",
