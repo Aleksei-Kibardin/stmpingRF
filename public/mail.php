@@ -8,7 +8,7 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 $name = $data['name'];
 $phone = $data['number'];
-$email = $data['email'];
+$message = $data['message'];
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
