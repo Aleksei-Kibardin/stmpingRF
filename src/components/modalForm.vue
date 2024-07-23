@@ -31,7 +31,8 @@
             placeholder="+7(000)000-00-00"
             class="form__field"
             ref="phoneInput"
-            @focus="applyMask"
+            @click="checkInput"
+            @input="checkInput"
           />
         </div>
         <div>
@@ -72,15 +73,6 @@ const formData = reactive({
   question: "",
 });
 
-const applyMask = () => {
-  if (phoneInput.value && !phoneInput.value.maskRef) {
-    phoneInput.value.maskRef = IMask(phoneInput.value, {
-      mask: "+7(000)000-00-00",
-      lazy: false,
-    });
-  }
-};
-
 watch(formData, () => {
   formData.number = formData.number.replace(/[^\d+()]/g, "");
 });
@@ -98,6 +90,25 @@ const closeModal = (event) => {
 
 const post = async () => {
   await submitForm(formData, formSubmitted, message);
+};
+
+const checkInput = () => {
+  console.log(formData.number);
+  if (formData.number === "") {
+    if (phoneInput.value && !maskInstance) {
+      maskInstance = IMask(phoneInput.value, {
+        mask: "+7(000)000-00-00",
+        lazy: false,
+      });
+    }
+  }
+  if (formData.number === "+7)" || formData.number === "+7()") {
+    console.log("hi");
+    maskInstance.destroy();
+    maskInstance = null;
+    phoneInput.value = null;
+    formData.number = "";
+  }
 };
 </script>
 
